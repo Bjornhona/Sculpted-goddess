@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* --- components --- */
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: $white;
+  margin: 0;
+  padding: 0;
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+}
+
+h1 { 
+  font-family: "Open Sans semibold";
+  font-size: $font-h1-size;
+  text-transform: uppercase;
+  line-height: 4vw;
+  margin: 0;
+}
+
+h2 { 
+  font-weight: 900;
+  font-size: $font-h2-size;
+  text-transform: uppercase;
+  line-height: 2vw;
+  margin: 0;
+}
+
+h3 {
+  font-size: $font-h3-size;
+  font-weight: 400;
+  padding: 2vw 0;
+  line-height: 2.5vw;
+  margin: 0;
+}
+
+h4 {
+  font-size: $font-button-size;
+  font-family: "Open Sans semibold";
+  color: $dark-grey;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: $font-p-size;
+  line-height: $font-p-size;
+}
+
+a {
+  font-size: $font-p-size;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $white;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: $light-pink;
+}
+
+button {
+  font-size: $font-button-size;
+  font-family: "Open Sans semibold";
+  padding: 0.8vw 3vw;
+  height: 4vw;
+  background-color: transparent;
+  color: $white;
+  text-transform: uppercase;
+  border: 1.5px solid $white;
+  border-radius: 5px;
+}
+
+
+/* --- navigation --- */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vw;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  height: 7vw;
+  margin-top: -7vw;
+  background-image: linear-gradient(rgba(black , 0.6), transparent);
+}
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    li {
+      display: inline-block;
+    }
+  }
+  a:link, a:visited {
+    padding: 0 1vw;
+  }
+}

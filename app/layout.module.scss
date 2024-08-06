@@ -1,0 +1,53 @@
+/* --- navigation --- */
+
+.navbarBrand {
+  font-family: "Trajan Pro 3";
+  font-size: 2vw;
+  width: 13vw;
+  text-align: left;
+}
+
+
+/* --- upper footer --- */
+
+.upperFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4vw;
+  background-color: $dark-blue;
+  ul {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    li {
+      display: inline-block;
+    }
+  }
+  a:link, a:visited {
+    padding: 0 1vw;
+  }
+  .socialMedia li {
+    font-size: 2vw;
+    padding: 2vw 3vw;
+  }
+}
+
+/* --- lower footer --- */
+
+.lowerFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark-grey;
+  span {
+    color: $light-pink;
+  }
+  a:link, a:visited {
+    color: $light-pink;
+    text-decoration: none;
+  }
+  a:hover, a:active {
+    color: $medium-pink;
+  }
+}

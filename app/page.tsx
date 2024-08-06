@@ -1,95 +1,82 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from 'next/image';
+import styles from "./page.module.scss";
+import sculptedGoddessImage from '/public/images/sculpted-goddess.png';
+import trainingPlanImage from '/public/images/training-plan.jpg';
+import healthyRecipiesImage from '/public/images/healthy-recipes.jpg';
+import manageWeightImage from '/public/images/manage-weight.png';
+import contactUsImage from '/public/images/contact-us.jpg';
 
-export default function Home() {
+const Home = () => {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <header className={[styles.carousel, styles.sharedBox].join(" ")}>
+        <div className={[styles.carouselBox, styles.sharedBoxContent].join(" ")}>
+          <h1><span>Get in</span> Shape</h1>
+          <div className={styles.textBox}>
+            <h3>We help you create an outstanding lifestyle with tons of tips to healthy habits so that you can become a Sculpted Goddess.</h3>
+          </div>
         </div>
-      </div>
+        <div className={styles.headerImage}>
+          {/* <Image src={sculptedGoddessImage} alt="Sculpted Goddess" fill /> */}
+        </div>
+      </header>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section className={[styles.trainingPlan, styles.sharedBox].join(" ")}>
+        <div className={[styles.trainingPlanBox, styles.sharedBoxContent].join(" ")}>
+            <h1><span>Training</span> Plan</h1>
+            <div className={styles.textBox}>
+              <h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.</h3>
+            </div>
+            <a href="/get_toned"><button>get toned</button></a>
+        </div>
+        <div className={[styles.cropped, styles.imagePositionRight].join(" ")}>
+          {/* <Image src={trainingPlanImage} alt="dumbells" fill /> */}
+        </div>
+        <span className={styles.leftBackgroundBox} />
+      </section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      <section className={[styles.healthyRecipes, styles.sharedBox].join(" ")}>
+        <div className={[styles.cropped, styles.imagePositionLeft].join(" ")}>
+          {/* <Image src={healthyRecipiesImage} alt="healthy food" fill /> */}
+        </div>
+        <div className={[styles.healthyRecipesBox, styles.sharedBoxContent].join(" ")}>
+            <h1><span>Healthy</span> Recipes</h1>
+            <div className={styles.textBox}>
+              <h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.</h3>
+            </div>
+            <a href="/eat_healthy"><button>eat healthy</button></a>
+        </div>
+        <span className={[styles.rightBackgroundBox, styles.sharedBackgroundBox].join(" ")} />
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+      <section className={[styles.weightlossProgram, styles.sharedBox].join(" ")}>
+        <div className={styles.weightlossBox}>
+          <h1><span>Weightloss</span> Program</h1>
+          <div className={styles.textBox}>
+            <h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.</h3>
+          </div>
+          <a href="/manage_weight"><button>manage weight</button></a>
+        </div>
+        <div className={styles.weightlossImage}>
+          {/* <Image src={manageWeightImage} alt="Manage weight" fill /> */}
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <section className={[styles.contactUs, styles.sharedBox].join(" ")}>
+        <div className={[styles.contactUsBox, styles.sharedBoxContent].join(" ")}>
+            <h1><span>Contact</span> Us</h1>
+            <div className={styles.textBox}>
+              <h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.</h3>
+            </div>
+            <a href="/contact_us"><button>get in contact</button></a>
+        </div>
+        <div className={[styles.cropped, styles.imagePositionRight].join(" ")}>
+          {/* <Image src={contactUsImage} alt="Girl with phone" fill /> */}
+        </div>
+        <span className={[styles.leftBackgroundBox, styles.sharedBackgroundBox].join(" ")} />
+      </section>
     </main>
   );
 }
+
+export default Home;

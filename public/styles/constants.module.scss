@@ -1,0 +1,58 @@
+// constants
+
+$dark-blue: #37969A;
+$light-blue: #56BBBF;
+$aqua: #4ED2D6;
+$white: #FFFFFF;
+$light-green: #ADFCAE;
+$dark-green: #82EB84;
+$forest-green: #6DCC6F;
+$yellow: #FDFD97;
+$light-orange: #FFB55F;
+$dark-orange: #FD8902;
+$fuccia: #F747AD;
+$light-pink: #FAD5EE;
+$medium-pink: #EFB6DD;
+$dark-pink: #D993C8;
+$light-purple: #A67FCE;
+$purple: #924ED6;
+$dark-grey: #454444;
+$medium-grey: #B5B5B5;
+$light-grey: #E6E6E6;
+
+$font-h1-size: 4.5vw; //86pt
+$font-h2-size: 2.5vw; //48pt
+$font-h3-size: 1.4vw; //28pt
+$font-button-size: 1.1vw; //22pt
+$font-p-size: 0.9vw; //18pt
+
+:export {
+  colors: {
+    darkBlue: $dark-blue;
+    lightBlue: $light-blue;
+    aqua: $aqua;
+    white: $white;
+    lightGreen: $light-green;
+    darkGreen: $dark-green;
+    forestGreen: $forest-green;
+    yellow: $yellow;
+    lightOrange: $light-orange;
+    darkOrange: $dark-orange;
+    fuccia: $fuccia;
+    lightPink: $light-pink;
+    mediumPink: $medium-pink;
+    darkPink: $dark-pink;
+    lightPurple: $light-purple;
+    purple: $purple;
+    darkGrey: $dark-grey;
+    mediumGrey: $medium-grey;
+    lightGrey: $light-grey;
+  };
+  fontSizes: {
+    h1: $font-h1-size;
+    h2: $font-h2-size;
+    h3: $font-h3-size;
+    button: $font-button-size;
+    p: $font-p-size;
+  }
+}

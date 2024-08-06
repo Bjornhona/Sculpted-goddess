@@ -1,0 +1,176 @@
+// @import './constants.module.scss';
+
+/* --- reusables --- */
+
+.sharedBox {
+  display: flex;
+  align-items: center;
+  padding: 6vw 0;
+  width: 100vw;
+  position: relative;
+}
+
+.sharedBoxContent {
+  padding: 3.5vw 5vw;
+  width: 55vw;
+  z-index: 100;
+}
+
+.sharedBackgroundBox {
+  position: absolute;
+  top: 6vw;
+  bottom: 9vw;
+  width: 55vw;
+}
+
+.cropped {
+  width: 40vw;
+  height: 32vw;
+  overflow: hidden;
+  z-index: 100;
+  img {
+    max-height: 32vw;
+  }
+}
+
+.imagePositionRight {
+  margin: 3.5vw 7vw 0 4vw;
+}
+
+.imagePositionLeft {
+  margin: 3.5vw 4vw 0 7vw;
+}
+
+.textBox {
+  width: 30vw;
+}
+
+.leftBackgroundBox {
+  @extend .sharedBackgroundBox;
+  background-color: $light-grey;
+  left: 10vw;
+}
+
+.rightBackgroundBox {
+  @extend .sharedBackgroundBox;
+  background-color: $white;
+  right: 10vw;
+}
+
+.container {
+  padding: 5vw 5vw 7vw 5vw;
+}
+
+
+/* --- header section --- */
+
+.carousel {
+  @extend .sharedBox;
+  background: radial-gradient(closest-side, $light-blue, $light-blue, $dark-blue);
+  height: 45vw;
+  span {
+    color: $light-green;
+  }
+  .headerImage {
+    height: 40vw;
+    img {
+      max-height: 40vw;
+      position: absolute;
+      right: 21vw;
+      bottom: 0;
+    }
+  }
+  .carouselBox {
+    @extend .sharedBoxContent;
+    margin: 9vw 0 0 25vw;
+    z-index: 100;
+  }
+}
+
+/* --- training plan section --- */
+
+.trainingPlan {
+  @extend .sharedBox;
+  background-color: $white;
+  .trainingPlanBox {
+    @extend .sharedBoxContent;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: right;
+    background-color: $dark-green;
+    span {
+      color: $dark-pink;
+    }
+    button:hover {
+      color: $dark-pink;
+      border: 1.5px solid $dark-pink;
+    }
+  }
+}
+
+/* --- healthy recipes section --- */
+
+.healthyRecipes {
+  @extend .sharedBox;
+  background-color: $light-grey;
+  justify-content: flex-end;
+  .healthyRecipesBox {
+    @extend .sharedBoxContent;
+    background-color: $dark-orange;
+    span {
+      color: $light-green;
+    }
+    button:hover {
+      color: $light-green;
+      border: 1.5px solid $light-green;
+    }
+  }
+}
+
+/* --- weight loss section --- */
+
+.weightlossProgram {
+  @extend .sharedBox;
+  padding: 10vw 0;
+  background: radial-gradient(closest-side, $medium-pink, $dark-pink);
+  span {
+    color: $yellow;
+  }
+  img {
+    max-height: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .weightlossBox {
+    padding-left: 14vw;
+    z-index: 100;
+  }
+  button:hover {
+    color: $yellow;
+    border: 1.5px solid $yellow;
+  }
+}
+
+/* --- contact us section --- */
+
+.contactUs {
+  @extend .sharedBox;
+  background-color: $white;
+  .contactUsBox {
+    @extend .sharedBoxContent;
+    background-color: $light-blue;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: right;
+    span {
+      color: $light-pink;
+    }
+    button:hover {
+      color: $light-pink;
+      border: 1.5px solid $light-pink;
+    }
+  }
+}
