@@ -17,7 +17,7 @@ const Home = () => {
           </div>
         </div>
         <div className={styles.headerImage}>
-          {/* <Image src={sculptedGoddessImage} alt="Sculpted Goddess" fill /> */}
+          <Image src={sculptedGoddessImage} alt="Sculpted Goddess" />
         </div>
       </header>
 
@@ -30,14 +30,14 @@ const Home = () => {
             <a href="/get_toned"><button>get toned</button></a>
         </div>
         <div className={[styles.cropped, styles.imagePositionRight].join(" ")}>
-          {/* <Image src={trainingPlanImage} alt="dumbells" fill /> */}
+          <Image src={trainingPlanImage} alt="dumbells" />
         </div>
         <span className={styles.leftBackgroundBox} />
       </section>
 
       <section className={[styles.healthyRecipes, styles.sharedBox].join(" ")}>
         <div className={[styles.cropped, styles.imagePositionLeft].join(" ")}>
-          {/* <Image src={healthyRecipiesImage} alt="healthy food" fill /> */}
+          <Image src={healthyRecipiesImage} alt="healthy food" />
         </div>
         <div className={[styles.healthyRecipesBox, styles.sharedBoxContent].join(" ")}>
             <h1><span>Healthy</span> Recipes</h1>
@@ -58,7 +58,7 @@ const Home = () => {
           <a href="/manage_weight"><button>manage weight</button></a>
         </div>
         <div className={styles.weightlossImage}>
-          {/* <Image src={manageWeightImage} alt="Manage weight" fill /> */}
+          <Image src={manageWeightImage} alt="Manage weight" />
         </div>
       </section>
 
@@ -71,7 +71,7 @@ const Home = () => {
             <a href="/contact_us"><button>get in contact</button></a>
         </div>
         <div className={[styles.cropped, styles.imagePositionRight].join(" ")}>
-          {/* <Image src={contactUsImage} alt="Girl with phone" fill /> */}
+          <Image src={contactUsImage} alt="Girl with phone" />
         </div>
         <span className={[styles.leftBackgroundBox, styles.sharedBackgroundBox].join(" ")} />
       </section>
