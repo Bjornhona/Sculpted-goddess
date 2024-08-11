@@ -1,0 +1,19 @@
+/* --- shared content --- */
+
+%sharedBox {
+  display: flex;
+  align-items: center;
+  padding: 6vw 0;
+  width: 100vw;
+  position: relative;
+}
+
+%sharedBoxContent {
+  padding: 3.5vw 5vw;
+  width: 55vw;
+  z-index: 100;
+}
+
+%textBox {
+  width: 30vw;
+}

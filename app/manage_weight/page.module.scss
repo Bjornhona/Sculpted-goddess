@@ -1,0 +1,403 @@
+/* --- header section --- */
+
+.manageWeightHeader {
+  @extend %sharedBox;
+  background: radial-gradient(closest-side, $medium-pink, $medium-pink, $dark-pink);
+  height: 35vw;
+  overflow: hidden;
+  span {
+    color: $yellow;
+  }
+  .manageWeightHeaderImage {
+    height: 35vw;
+    img {
+      width: auto;
+      max-height: 35vw;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  .manageWeightHeaderBox {
+    @extend %sharedBoxContent;
+    width: 65vw;
+    margin: 7vw 0 0 15vw;
+  }
+}
+
+/* --- forms sections --- */
+
+.manageWeightMain, .manageWeightMainCards {
+  background-color: $light-grey;
+  padding: 3vw 7vw;
+  color: $dark-grey;
+  .mainHeaderText {
+    background-color: $dark-blue;
+    color: $white;
+    border-radius: 0.5vw 0.5vw 0 0;
+    padding: 2vw;
+    text-align: center;
+    h2 {
+      span {
+        color: $light-green;
+      }
+    }
+    h3 {
+      padding: 1vw 0 0 0;
+    }
+  }
+  .mainContent {
+    background-color: $white;
+    padding: 3vw 7vw 5vw 7vw;
+    margin-bottom: 3vw;
+    h3 {
+      padding: 0 0 1vw 0;
+      span {
+        font-weight: 900;
+      }
+    }
+    .genderBox, .actionBox {
+      padding-bottom: 3vw;
+      .genderContainer, .actionContainer {
+        display: flex;
+        justify-content: space-between;
+        input {
+          position: absolute;
+          opacity: 0;
+          height: 0;
+          width: 0;
+        }
+        %textBox {
+          text-align: center;
+          h3 {
+            line-height: $font-h3-size;
+            padding-bottom: 1vw;
+          }
+        }
+        .male, .female, .gain, .lose {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 34vw;
+          background-color: $medium-grey;
+          padding: 1vw 3vw;
+          cursor: pointer;
+          color: $white;
+          font-size: $font-h1-size;
+        }
+        .gain, .lose {
+          font-size: $font-h2-size;
+        }
+        .maleInput:hover ~ .male {
+          background-color: $aqua;
+        }
+        .femaleInput:hover ~ .female {
+          background-color: $medium-pink;
+        }
+        .gainInput:hover ~ .gain {
+          background-color: $light-green;
+        }
+        .loseInput:hover ~ .lose {
+          background-color: $aqua;
+        }
+        .maleInput:checked ~ .male {
+          background-color: $light-blue;
+        }
+        .femaleInput:checked ~ .female {
+          background-color: $dark-pink;
+        }
+        .gainInput:checked ~ .gain {
+          background-color: $dark-green;
+        }
+        .loseInput:checked ~ .lose {
+          background-color: $light-blue;
+        }
+      }
+    }
+    .weightHeightAgeContainer, .desiredWeightContainer {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 3vw;
+    }
+    .activityOptionsContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $aqua;
+      height: 1vw;
+      margin: 2vw 0;
+      .container {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+        margin-bottom: 3vw;
+        margin-right: 3vw;
+      }
+      .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 3vw;
+        width: 3vw;
+        background-color: $white;
+        border-radius: 50%;
+        border: solid $aqua;
+      }
+      .container:hover input ~ .checkmark {
+        background-color: $light-grey;
+      }
+      .container input:checked ~ .checkmark {
+        background-color: $dark-blue;
+      }
+    }
+    .labelText {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 3vw;
+      h4 {
+        margin: 0;
+      }
+    }
+    button:disabled, button[disabled] {
+      color: $medium-grey;
+      border-color: $medium-grey;
+      background-color: $white;
+    }
+    button:enabled {
+      color: $white;
+      border-color: $dark-orange;
+      background-color: $dark-orange;
+    }
+    button:enabled:hover {
+      background-color: $light-orange;
+      border-color: $light-orange;
+    }
+    .calculateMakro {
+      button:enabled {
+        border-color: $fuccia;
+        background-color: $fuccia;
+      }
+      button:enabled:hover {
+        background-color: $dark-pink;
+        border-color: $dark-pink;
+      }
+    }
+    .weight, .height, .age {
+      position: relative;
+      input {
+        border: 1px solid $medium-grey;
+        font-size: $font-h3-size;
+        height: 6vw;
+        padding: 2vw;
+        width: 15vw;
+      }
+      .unit {
+        position: absolute;
+        display: block;
+        left: 7vw;
+        top: 5.3vw;
+        z-index: 19;
+        font-weight: 400;
+        color: $medium-grey;
+        padding: 0;
+      }
+    }
+    .age {
+      .unit {
+        left: 6vw;
+      }
+    }
+    .calculateCalories, .calculateMakro {
+      display: flex;
+      justify-content: space-between;
+      h3 {
+        font-weight: 400;
+        width: 30vw;
+        text-align: right;
+        span {
+          font-weight: 900;
+        }
+      }
+    }
+  }
+
+  .mainTwoHeaderText {
+    background-color: $purple;
+    h2 {
+      span {
+        color: $yellow;
+      }
+    }
+  }
+  .mainThreeHeaderText {
+    background-color: $dark-blue;
+    h2 {
+      span {
+        color: $light-pink;
+      }
+    }
+  }
+}
+.manageWeightMainCards {
+  background-color: $white;
+  padding: 3vw;
+}
+
+/* --- macronutrient summary section --- */
+
+.macronutrientSummary {
+  padding: 3vw 1vw 5vw 1vw;
+  position: relative;
+  background: $light-green;
+  color: $dark-grey;
+  border-radius: 0 0 0.5vw 0.5vw;
+  h3 {
+    padding: 0 0 1.5vw 0;
+    font-weight: 900;
+  }
+  .macronutrientSummaryBox {
+    display: flex;
+    justify-content: space-between;
+  }
+  .macroCard {
+    background-color: $white;
+    border-radius: 0.5vw;
+    width: 22vw;
+    padding: 2vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    transform: 0.5s;
+    h3 {
+      padding: 0;
+      font-weight: 400;
+      span {
+        font-weight: 900;
+      }
+    }
+    .cardCircle {
+      h3 {
+        padding: 0;
+      }
+      h4 {
+        color: $dark-blue;
+        margin: 0;
+      }
+      .percent {
+        margin: 1vw 0;
+        padding: 0;
+        width: 20vw;
+        height: 20vw;
+        position: relative;
+        svg {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          z-index: 100;
+          circle {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: $light-grey;
+            stroke-width: 10;
+            stroke-linecap: round;
+          }
+          circle:nth-child(2) {
+            stroke-dasharray: 57vw;
+            stroke-dashoffset: 57vw;
+          }
+        }
+        .number {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          h3 span{
+            font-weight: 900;
+          }
+        }
+      }
+    }
+    .barHolder {
+      width: 100%;
+      background-color: rgb(231, 231, 231);
+      border-radius: 20px;
+      margin: 0.5vw auto; 
+      .bar {
+        border-radius: 20px;
+        height: 1vw;
+      }
+      .bar1 {
+        width: 20%;
+        background-image: linear-gradient(100deg, $fuccia, $dark-orange);
+      }
+      .bar2 {
+        width: 40%;
+        background-image: linear-gradient(100deg, $aqua, $purple);
+      }
+      .bar3 {
+        width: 60%;
+        background-image: linear-gradient(100deg, $dark-blue, $dark-green);
+      }
+    }
+    .progressBarContainer {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  }
+  .macroCard:nth-child(1) .card-circle .percent svg circle:nth-child(2) {
+    stroke: $fuccia;
+    stroke-dashoffset: 55vw;
+  }
+  .macroCard:nth-child(2) .card-circle .percent svg circle:nth-child(2) {
+    stroke: $aqua;
+    stroke-dashoffset: 25vw;
+  }
+  .macroCard:nth-child(3) .card-circle .percent svg circle:nth-child(2) {
+    stroke: $dark-green;
+    stroke-dashoffset: 5vw;
+  }
+  .continueButtons {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    .newSearchButton {
+      color: $fuccia;
+      background-color: $light-pink;
+      border: 1.5px solid $fuccia;
+      margin: 3vw 3vw 0 3vw;
+    }
+    .newSearchButton:hover {
+      background-color: $medium-pink;
+    }
+    .saveDataButton {
+      background-color: $fuccia;
+      border: 1.5px solid $fuccia;
+      margin: 3vw 3vw 0 3vw;
+    }
+    .saveDataButton:hover {
+      background-color: $dark-pink;
+      border: 1.5px solid $dark-pink;
+    }
+  }
+}

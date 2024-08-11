@@ -1,20 +1,4 @@
-// @import './constants.module.scss';
-
 /* --- reusables --- */
-
-.sharedBox {
-  display: flex;
-  align-items: center;
-  padding: 6vw 0;
-  width: 100vw;
-  position: relative;
-}
-
-.sharedBoxContent {
-  padding: 3.5vw 5vw;
-  width: 55vw;
-  z-index: 100;
-}
 
 .sharedBackgroundBox {
   position: absolute;
@@ -42,10 +26,6 @@
   margin: 3.5vw 4vw 0 7vw;
 }
 
-.textBox {
-  width: 30vw;
-}
-
 .leftBackgroundBox {
   @extend .sharedBackgroundBox;
   background-color: $light-grey;
@@ -66,7 +46,7 @@
 /* --- header section --- */
 
 .carousel {
-  @extend .sharedBox;
+  @extend %sharedBox;
   background: radial-gradient(closest-side, $light-blue, $light-blue, $dark-blue);
   height: 45vw;
   span {
@@ -83,7 +63,7 @@
     }
   }
   .carouselBox {
-    @extend .sharedBoxContent;
+    @extend %sharedBoxContent;
     margin: 9vw 0 0 25vw;
     z-index: 100;
   }
@@ -92,10 +72,10 @@
 /* --- training plan section --- */
 
 .trainingPlan {
-  @extend .sharedBox;
+  @extend %sharedBox;
   background-color: $white;
   .trainingPlanBox {
-    @extend .sharedBoxContent;
+    @extend %sharedBoxContent;
     display: flex;
     align-items: flex-end;
     flex-direction: column;
@@ -114,11 +94,11 @@
 /* --- healthy recipes section --- */
 
 .healthyRecipes {
-  @extend .sharedBox;
+  @extend %sharedBox;
   background-color: $light-grey;
   justify-content: flex-end;
   .healthyRecipesBox {
-    @extend .sharedBoxContent;
+    @extend %sharedBoxContent;
     background-color: $dark-orange;
     span {
       color: $light-green;
@@ -133,7 +113,7 @@
 /* --- weight loss section --- */
 
 .weightlossProgram {
-  @extend .sharedBox;
+  @extend %sharedBox;
   padding: 10vw 0;
   background: radial-gradient(closest-side, $medium-pink, $dark-pink);
   span {
@@ -159,10 +139,10 @@
 /* --- contact us section --- */
 
 .contactUs {
-  @extend .sharedBox;
+  @extend %sharedBox;
   background-color: $white;
   .contactUsBox {
-    @extend .sharedBoxContent;
+    @extend %sharedBoxContent;
     background-color: $light-blue;
     display: flex;
     align-items: flex-end;
