@@ -1,0 +1,28 @@
+@import '@/public/styles/sharedContent.module.scss';
+
+/* --- header section --- */
+
+.notFoundHeader {
+  @extend %sharedBox;
+  background: radial-gradient(closest-side, $light-blue, $light-blue, $dark-blue);
+  height: 35vw;
+  overflow: hidden;
+  span {
+    color: $light-pink;
+  }
+  .notFoundHeaderImage {
+    height: 28vw;
+    img {
+      width: auto;
+      max-height: 28vw;
+      position: absolute;
+      right: 16vw;
+      bottom: 0;
+    }
+  }
+  .notFoundHeaderBox {
+    @extend %sharedBoxContent;
+    margin: 3vw 0 0 20vw;
+    z-index: 100;
+  }
+}

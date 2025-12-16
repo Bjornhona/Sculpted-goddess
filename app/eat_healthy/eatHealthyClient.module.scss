@@ -1,0 +1,68 @@
+@import '@/public/styles/sharedContent.module.scss';
+
+/* --- header section --- */
+.eatHealthyHeader {
+  @extend %sharedBox;
+  background: radial-gradient(closest-side, $light-orange, $light-orange, $dark-orange);
+  height: 35vw;
+  overflow: hidden;
+  span {
+    color: $light-green;
+  }
+  .eatHealthyHeaderImage {
+    height: 40vw;
+    img {
+      width: auto;
+      max-height: 40vw;
+      position: absolute;
+      right: 21vw;
+      bottom: -10vw;
+    }
+  }
+  .eatHealthyHeaderBox {
+    @extend %sharedBoxContent;
+    margin: 3vw 0 0 22vw;
+    z-index: 100;
+  }
+}
+
+/* --- main section --- */
+.eatHealthy {
+  background-color: $light-grey;
+  .containerAction {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1.5vw;
+    h3 {
+      padding: 0;
+      color: $dark-grey;
+      span {
+        font-weight: 700;
+      }
+    }
+    .showSavedButton {
+      background-color: $dark-pink;
+      border: none;
+    }
+    .showSavedButton:hover {
+      background-color: $medium-pink;
+    }
+  }
+}
+
+.featuredRecipesArea {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  padding-bottom: 4vw;
+  .noRecipesFound {
+    text-align: center;
+    font-size: $font-h3-size;
+    color: $dark-grey;
+    padding: 2vw;
+  }
+}

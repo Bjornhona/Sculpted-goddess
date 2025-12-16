@@ -1,0 +1,38 @@
+@import './colors';
+@import './fontSizes';
+@import './breakPoints';
+
+:export {
+  // colors
+  darkBlue: $dark-blue;
+  lightBlue: $light-blue;
+  aqua: $aqua;
+  white: $white;
+  lightGreen: $light-green;
+  darkGreen: $dark-green;
+  forestGreen: $forest-green;
+  yellow: $yellow;
+  lightOrange: $light-orange;
+  darkOrange: $dark-orange;
+  fuccia: $fuccia;
+  lightPink: $light-pink;
+  mediumPink: $medium-pink;
+  darkPink: $dark-pink;
+  lightPurple: $light-purple;
+  purple: $purple;
+  darkGrey: $dark-grey;
+  mediumGrey: $medium-grey;
+  lightGrey: $light-grey;
+
+  // font sizes
+  h1: $font-h1-size;
+  h2: $font-h2-size;
+  h3: $font-h3-size;
+  button: $font-button-size;
+  p: $font-p-size;
+
+  // break points
+  mobile: $mobile;
+  tablet: $tablet;
+  desktop: $desktop;
+}

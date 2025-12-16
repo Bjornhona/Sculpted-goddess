@@ -1,0 +1,25 @@
+/* --- upper footer --- */
+
+.upperFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4vw;
+  background-color: $dark-blue;
+  a {
+    text-align: center;
+  }
+}
+
+/* --- lower footer --- */
+
+.lowerFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark-grey;
+  height: 4vw;
+  span {
+    color: $medium-pink;
+  }
+}

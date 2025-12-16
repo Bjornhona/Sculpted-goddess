@@ -1,0 +1,31 @@
+/* --- logo --- */
+
+.navbarBrand {
+  font-family: var(--font-cinzel);
+  line-height: 1;
+  font-weight: 700;
+  font-size: 2.2vw;
+  letter-spacing: .1vw;
+  width: 13vw;
+  height: 5vw;
+  padding: 0.455vw 0;
+  text-align: left;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  img {
+    width: 4vw;
+    height: 4vw;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 1vw;
+  }
+}
+
+.active {
+  color: $light-pink;
+}

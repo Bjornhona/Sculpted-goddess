@@ -1,0 +1,26 @@
+@import '@/public/styles/sharedContent.module.scss';
+
+.manageWeightHeader {
+  @extend %sharedBox;
+  background: radial-gradient(closest-side, $medium-pink, $medium-pink, $dark-pink);
+  height: 35vw;
+  overflow: hidden;
+  span {
+    color: $yellow;
+  }
+  .manageWeightHeaderImage {
+    height: 35vw;
+    img {
+      width: auto;
+      max-height: 35vw;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  .manageWeightHeaderBox {
+    @extend %sharedBoxContent;
+    width: 65vw;
+    margin: 7vw 0 0 15vw;
+  }
+}

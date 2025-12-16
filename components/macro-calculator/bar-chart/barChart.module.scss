@@ -1,0 +1,21 @@
+.barChart {
+  &:nth-child(1) .barHolder .progress {
+    background-image: linear-gradient(100deg, $fuccia, $dark-orange);
+  }
+  &:nth-child(2) .barHolder .progress {
+    background-image: linear-gradient(100deg, $aqua, $purple);
+  }
+  &:nth-child(3) .barHolder .progress {
+    background-image: linear-gradient(100deg, $dark-blue, $dark-green);
+  }
+}
+.barHolder {
+  width: 100%;
+  background-color: $light-grey;
+  border-radius: 20px;
+  margin: 0.5vw auto;
+  .bar {
+    border-radius: 20px;
+    height: 1vw;
+  }
+}

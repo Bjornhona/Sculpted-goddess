@@ -1,0 +1,114 @@
+.smallRecipeContainer {
+  position: relative;
+  color: $dark-grey;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 1vw;
+  overflow: hidden;
+  background-color: $white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.08);
+  
+  &:hover {
+    transform: translateY(-0.8vw) scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 12px 32px rgba(0, 0, 0, 0.12);
+    
+    .recipeSelector {
+      .smallRecipeImage {
+        .recipeImage {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+  
+  &:focus-within {
+    outline: 2px solid $aqua;
+    outline-offset: 2px;
+  }
+  
+  &:active {
+    transform: translateY(-0.4vw) scale(0.98);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  
+  .recipeSelector {
+    border-radius: 1vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    
+    .smallRecipeImage {
+      height: 14vw;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $light-grey;
+      position: relative;
+      
+      .recipeImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+    }
+    
+    &:hover .smallRecipeImage::after {
+      opacity: 1;
+    }
+    
+    .smallRecipeText {
+      // background-color: $white;
+      width: 20vw;
+      padding: 1.5rem;
+      min-height: auto;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      
+      .recipeContent {
+        width: 100%;
+        
+        h3 {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          margin: 0 0 0.5vw 0;
+          padding: 0;
+          font-weight: 600;
+          transition: color 0.3s ease;
+        }
+        
+        p {
+          color: $medium-grey;
+          font-style: italic;
+        }
+      }
+    }
+    
+    &:hover .smallRecipeText {
+      background-color: $light-grey;
+      
+      .recipe-content h3 {
+        color: $dark-grey;
+      }
+    }
+  }
+}
