@@ -30,6 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta property="og:title" content="Scupted Goddess - all you need to get in shape" />
+        <meta property="og:description" content="We help you create an outstanding lifestyle with tons of tips to healthy habits so that you can become a Sculpted Goddess." />
+        <meta property="og:image" content="/images/sculpted-goddess-frontpage.png" />
+        <meta property="og:url" content="https://sculptedgoddess.vercel.app" />
+        <meta property="og:type" content="website" />
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
           strategy="lazyOnload"
