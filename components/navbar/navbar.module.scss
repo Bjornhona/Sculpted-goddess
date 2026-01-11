@@ -1,3 +1,13 @@
 .active {
   color: $light-pink;
 }
+
+.desktopNav {
+  display: inline-block;
+}
+
+@media (max-width: $tablet) {
+  .desktopNav {
+    display: none;
+  }
+}

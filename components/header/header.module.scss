@@ -1,3 +1,5 @@
+@import '@/public/styles/breakPoints.scss';
+
 #header {
   display: flex;
   justify-content: space-between;
@@ -10,4 +12,16 @@
   height: 7vw;
   margin-top: -7vw;
   background-image: linear-gradient(rgba(black , 0.6), transparent);
+  
+  .desktopNav {
+    display: inline-block;
+  }
+}
+
+@media (max-width: $tablet) {
+  #header {
+    .desktopNav {
+      display: none;
+    }
+  }
 }

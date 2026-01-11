@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <ul id={'navbar'}>
+      <ul id={'navbar'} className={styles.desktopNav}>
         <li><Link href="/about_us" className={path.startsWith('/about_us') ? styles.active : undefined}>about us</Link></li>
         <li><Link href="/eat_healthy" className={path.startsWith('/eat_healthy') ? styles.active : undefined}>eat healthy</Link></li>
         {/* <Link><a href="/get_toned" className={path.startsWith('/get_toned') ? styles.active : undefined}>get toned</a></Link> */}

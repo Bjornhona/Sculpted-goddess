@@ -1,0 +1,127 @@
+@import "@/public/styles/breakPoints.scss";
+
+.mobileNav {
+  display: none;
+}
+
+.active {
+  color: $light-pink;
+}
+
+.burgerButton {
+  all: unset;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  min-width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 300;
+
+  &:hover,
+  &:active {
+    color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  span {
+    width: 2rem;
+    height: 2px;
+    background: $white;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: center;
+  }
+
+  &.open {
+    span {
+      &:first-child {
+        transform: rotate(45deg) translate(5px, 10px);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -10px);
+      }
+    }
+  }
+}
+
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 250;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 70%;
+  max-width: 300px;
+  background: radial-gradient(
+    closest-side,
+    $light-blue,
+    $light-blue,
+    $dark-blue
+  );
+  padding: 5rem 2rem 2rem;
+  z-index: 251;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+
+    ul {
+      display: flex !important;
+      flex-direction: column !important;
+
+      li {
+        display: block !important;
+      }
+
+      a:link,
+      a:visited {
+        padding: 0.75rem 0 !important;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .mobileNav {
+    display: block;
+  }
+}

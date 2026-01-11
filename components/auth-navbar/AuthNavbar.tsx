@@ -8,7 +8,7 @@ const AuthNavbar = ({isLoggedIn}: {isLoggedIn: boolean}) => {
   const path = usePathname();
 
   return (
-    <nav>
+    <nav id={'authNavbar'} className={styles.desktopNav}>
       {isLoggedIn ?
         <form action={logout}>
           <ul id={'logout'} className={styles.active}>
@@ -17,7 +17,7 @@ const AuthNavbar = ({isLoggedIn}: {isLoggedIn: boolean}) => {
         </form>
         :
         <ul id={'login'}>
-          <li><Link href="/register" className={path.startsWith('/register') ? styles.active : undefined}>Signup</Link></li>
+          {/* <li><Link href="/register" className={path.startsWith('/register') ? styles.active : undefined}>Signup</Link></li> */}
           <li><Link href="/login" className={path.startsWith('/login') ? styles.active : undefined}>Login</Link></li>
         </ul>
         }
