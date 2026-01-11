@@ -1,4 +1,5 @@
-@import '@/public/styles/sharedContent.module.scss';
+@import "@/public/styles/sharedContent.module.scss";
+@import "@/public/styles/breakPoints.scss";
 
 /* --- reusables --- */
 
@@ -28,6 +29,10 @@
   margin: 3.5vw 4vw 0 7vw;
 }
 
+.textBox {
+  @extend %textBox;
+}
+
 .leftBackgroundBox {
   @extend .sharedBackgroundBox;
   background-color: $light-grey;
@@ -44,12 +49,16 @@
   padding: 5vw 5vw 7vw 5vw;
 }
 
-
 /* --- header section --- */
 
 .carousel {
   @extend %sharedBox;
-  background: radial-gradient(closest-side, $light-blue, $light-blue, $dark-blue);
+  background: radial-gradient(
+    closest-side,
+    $light-blue,
+    $light-blue,
+    $dark-blue
+  );
   height: 45vw;
   span {
     color: $light-green;
@@ -68,6 +77,39 @@
     @extend %sharedBoxContent;
     margin: 9vw 0 0 25vw;
     z-index: 100;
+  }
+}
+
+@media (max-width: $tablet) {
+  .carousel {
+    height: 65vw;
+    .headerImage {
+      height: 60vw;
+      img {
+        max-height: 60vw;
+        right: 15vw;
+      }
+    }
+    .carouselBox {
+      margin: 9vw 0 0 17vw;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .carousel {
+    height: 105vw;
+    .headerImage {
+      height: 95vw;
+      img {
+        max-height: 95vw;
+        right: -5vw;
+      }
+    }
+    .carouselBox {
+      margin: 9vw 0 0 0;
+      width: 75vw;
+    }
   }
 }
 
@@ -93,6 +135,27 @@
   }
 }
 
+@media (max-width: $tablet) {
+  .trainingPlan {
+    flex-direction: column-reverse;
+    padding: 10vw 5vw;
+    .trainingPlanBox {
+      width: 100%;
+      padding: 10vw;
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .trainingPlan {
+    .trainingPlanBox {
+      padding: 10vw 5vw;
+    }
+  }
+}
+
 /* --- healthy recipes section --- */
 
 .healthyRecipes {
@@ -112,11 +175,31 @@
   }
 }
 
+@media (max-width: $tablet) {
+  .healthyRecipes {
+    flex-direction: column;
+    padding: 10vw 5vw;
+    .healthyRecipesBox {
+      width: 100%;
+      padding: 10vw;
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .healthyRecipes {
+    .healthyRecipesBox {
+      padding: 10vw 5vw;
+    }
+  }
+}
+
 /* --- weight loss section --- */
 
 .weightlossProgram {
   @extend %sharedBox;
-  padding: 10vw 0;
   background: radial-gradient(closest-side, $medium-pink, $dark-pink);
   span {
     color: $yellow;
@@ -130,11 +213,38 @@
   }
   .weightlossBox {
     padding-left: 14vw;
+    padding-right: 14vw;
     z-index: 100;
   }
   button:hover {
     color: $yellow;
     border: 1.5px solid $yellow;
+  }
+}
+
+@media (max-width: $tablet) {
+  .weightlossProgram {
+    padding: 20vw 0;
+    .weightlossBox {
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+    img {
+      right: -20vw;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .weightlossProgram {
+    padding: 30vw 0;
+    .weightlossBox {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+    img {
+      right: -55vw;
+    }
   }
 }
 
@@ -157,5 +267,45 @@
       color: $light-pink;
       border: 1.5px solid $light-pink;
     }
+  }
+}
+
+@media (max-width: $tablet) {
+  .contactUs {
+    flex-direction: column-reverse;
+    padding: 10vw 5vw;
+    .contactUsBox {
+      width: 100%;
+      padding: 10vw;
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .contactUs {
+    .contactUsBox {
+      padding: 10vw 5vw;
+    }
+  }
+}
+
+/* --- reusables media queries --- */
+
+@media (max-width: $tablet) {
+  .cropped {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    transform: translateY(5px);
+    img {
+      width: 100%;
+      height: auto;
+      max-height: none;
+    }
+  }
+  .leftBackgroundBox, .rightBackgroundBox {
+    display: none;
   }
 }

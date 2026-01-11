@@ -17,3 +17,19 @@
 %textBox {
   width: 30vw;
 }
+
+@media (max-width: $tablet) {
+  %sharedBoxContent {
+    padding: 20vw 10vw;
+  }
+  %textBox {
+    width: 100%;
+  }
+}
+
+@media (max-width: $mobile) {
+  %sharedBoxContent {
+    width: 100%;
+    padding: 10vw 5vw;
+  }
+}

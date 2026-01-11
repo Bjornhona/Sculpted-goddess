@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 const Home = () => {
   return (
-    <main className={styles.main}>
+    <main>
       <header className={[styles.carousel, styles.sharedBox].join(" ")}>
         <div className={[styles.carouselBox, styles.sharedBoxContent].join(" ")}>
           <h1><span>Get in</span> Shape</h1>
