@@ -4,28 +4,47 @@
   font-family: var(--font-cinzel);
   line-height: 1;
   font-weight: 700;
-  font-size: 2.2vw;
-  letter-spacing: .1vw;
+  font-size: var(--font-h3-size);
+  letter-spacing: 0.1rem;
   width: 13vw;
-  height: 5vw;
-  padding: 0.455vw 0;
   text-align: left;
+  display: flex;
+  align-items: center;
 }
 .logo {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
-  gap: 1vw;
+  gap: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   img {
-    width: 4vw;
-    height: 4vw;
+    width: 3rem;
+    height: 3rem;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 1vw;
+    border-radius: var(--border-radius);
   }
 }
 
 .active {
   color: $light-pink;
+}
+
+@media (max-width: $tablet) {
+  .logo {
+    gap: 0.75rem;
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .logo {
+    gap: 0.5rem;
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
 }
