@@ -2,6 +2,7 @@ import Image from 'next/image';
 import styles from './page.module.scss';
 import aboutUsImage from '/public/images/about-us.png';
 import aboutUs2Image from '/public/images/about-us2.png';
+import { FaUtensils, FaDumbbell, FaWeight } from "react-icons/fa";
 
 const AboutUs = () => {  
   return (
@@ -34,17 +35,17 @@ const AboutUs = () => {
         <h1><span>Our</span> services</h1>
         <div className={styles.serviceContainer}>
           <div className={styles.serviceTextBox}>
-            <div className={styles.serviceIcon}><i className="fas fa-utensils"></i></div>
+            <div className={styles.serviceIcon}><FaUtensils /></div>
             <h3><span>Healthy recipes</span></h3>
             <h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</h3>
           </div>
           <div className={styles.serviceTextBox}>
-            <div className={styles.serviceIcon}><i className="fas fa-dumbbell"></i></div>
+            <div className={styles.serviceIcon}><FaDumbbell /></div>
             <h3><span>Fitness program</span></h3>
             <h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</h3>
           </div>
           <div className={styles.serviceTextBox}>
-            <div className={styles.serviceIcon}><i className="fas fa-weight"></i></div>
+            <div className={styles.serviceIcon}><FaWeight /></div>
             <h3><span>Weightloss program</span></h3>
             <h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</h3>
           </div>

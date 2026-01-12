@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import styles from './searchInput.module.scss';
 import { useFormState } from 'react-dom';
 import { recipesList } from '@/actions/search-actions';
+import { FaSearch } from "react-icons/fa";
 
 interface SearchInputState {
   hits: any[];
@@ -53,7 +54,7 @@ const SearchInput = ({ onRecipesChange }: SearchInputProps) => {
   return (
     <form id="search-form" ref={formRef} action={formAction}>
       <div className={styles.search}>
-        <div className={styles.searchIcon}><i className="fas fa-search"></i></div>
+        <div className={styles.searchIcon}><FaSearch /></div>
         <input 
           type="text" 
           name="search_word" 

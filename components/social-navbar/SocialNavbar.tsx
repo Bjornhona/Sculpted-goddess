@@ -1,12 +1,13 @@
 import styles from './socialNavbar.module.scss';
+import { FaFacebookSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const SocialNavbar = () => {
   return (
     <nav>
       <ul className={styles.socialMedia}>
-        <li><i className="fab fa-facebook-square"></i></li>
-        <li><i className="fab fa-instagram"></i></li>
-        <li><i className="fab fa-linkedin"></i></li>
+        <li><FaFacebookSquare /></li>
+        <li><FaInstagram /></li>
+        <li><FaLinkedin /></li>
       </ul>
     </nav>
   )

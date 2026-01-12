@@ -4,6 +4,7 @@ import styles from "./recipeModal.module.scss";
 import Image from "next/image";
 import { Recipe } from "@/components/recipes/recipe-card/RecipeCard";
 import YouTubeEmbed from "@/components/you-tube-embed/YouTubeEmbed";
+import { FaGlobe } from "react-icons/fa";
 
 interface RecipeModalProps {
   onClose: () => void;
@@ -29,7 +30,7 @@ const RecipeModal = ({ onClose, recipe }: RecipeModalProps) => {
             <h2>{recipe.strMeal}</h2>
             <div className={styles.modalHeaderBottomRow}>
               <div className={styles.iconContainer}>
-                <i className="fas fa-globe"></i>
+                <FaGlobe />
               </div>
               <p>{recipe.strArea}</p>
             </div>

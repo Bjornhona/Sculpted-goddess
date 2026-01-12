@@ -1,7 +1,7 @@
 "use client";
 import styles from "./dietaryNeeds.module.scss";
 import { useWeight } from "@/components/macro-calculator/WeightContext";
-
+import { FaMale, FaFemale } from "react-icons/fa";
 interface Props {
   onSave: () => void;
 }
@@ -59,7 +59,7 @@ const DietaryNeeds = ({ onSave }: Props) => {
                 required
               />
               <label className={styles.male} htmlFor="male">
-                <i className="fas fa-male"></i>
+                <FaMale />
                 <div className={styles.textBox}>
                   <h3>I am</h3>
                   <h2>male</h2>
@@ -78,7 +78,7 @@ const DietaryNeeds = ({ onSave }: Props) => {
                 onChange={(e) => setGender(Number(e.target.value))}
               />
               <label className={styles.female} htmlFor="female">
-                <i className="fas fa-female"></i>
+                <FaFemale />
                 <div className={styles.textBox}>
                   <h3>I am</h3>
                   <h2>female</h2>

@@ -5,6 +5,7 @@ import {signup} from '@/actions/auth-actions';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import { FaEnvelope, FaLock, FaCheck } from "react-icons/fa";
 
 const Register = () => {
   const initialState = {};
@@ -23,24 +24,24 @@ const Register = () => {
         <div className={styles.signupLeftContainer}>
           <h3>Signing up gives you free access to our content:</h3>
           <div className={styles.featuresList}>
-            <div><span><i className="fas fa-check"></i></span><p>Healthy recipes adapted to your goals.</p></div>
-            <div><span><i className="fas fa-check"></i></span><p>Muscle Mass and Body Index counter.</p></div>
-            <div><span><i className="fas fa-check"></i></span><p>Personal training recommendations.</p></div>
+            <div><span><FaCheck /></span><p>Healthy recipes adapted to your goals.</p></div>
+            <div><span><FaCheck /></span><p>Muscle Mass and Body Index counter.</p></div>
+            <div><span><FaCheck /></span><p>Personal training recommendations.</p></div>
           </div>
         </div>
         <div className={styles.signupRightContainer}>
           <h2><span>Who&#39;s</span> there?</h2>
           <form id="auth-form" action={formAction}>
             <div>
-              <span><i className="fas fa-envelope"></i></span>
+              <span><FaEnvelope /></span>
               <input autoComplete="off" autoFocus type="email" name="email" placeholder="Email" />
             </div>
             <div>
-              <span><i className="fas fa-lock"></i></span>
+              <span><FaLock /></span>
               <input type="password" name="password" placeholder="Password" />
             </div>
             <div>
-              <span><i className="fas fa-lock"></i></span>
+              <span><FaLock /></span>
               <input type="password" name="confirmation" placeholder="Password (again)" />
             </div>
             {formState.errors && (

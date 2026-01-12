@@ -1,5 +1,4 @@
 'use client';
-
 import { useState } from 'react';
 import { sendContactMessage } from '@/actions/contact-actions';
 import Image from 'next/image';
@@ -7,6 +6,7 @@ import contactUs1Image from '/public/images/contact-us1.png';
 import contactUs2Image from "/public/images/contact-us2.png";
 import mapImage from '/public/images/map.png';
 import styles from './page.module.scss';
+import { FaUser, FaDumbbell, FaCommentDots, FaPhoneSquare, FaAt, FaMapMarkerAlt } from "react-icons/fa";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -77,7 +77,7 @@ const ContactUs = () => {
             <h2><span>Who&#39;s</span> there?</h2>
             <form onSubmit={handleSubmit}>
               <div>
-                <span><i className="fas fa-user"></i></span>
+                <span><FaUser /></span>
                 <input 
                   autoComplete="off" 
                   type="text" 
@@ -89,7 +89,7 @@ const ContactUs = () => {
                 />
               </div>
               <div>
-                <span><i className="fas fa-dumbbell"></i></span>
+                <span><FaDumbbell /></span>
                 <input 
                   type="email" 
                   name="email" 
@@ -100,7 +100,7 @@ const ContactUs = () => {
                 />
               </div>
               <div>
-                <span><i className="fas fa-comment-dots"></i></span>
+                <span><FaCommentDots /></span>
                 <textarea 
                   name="message" 
                   placeholder="Message" 
@@ -127,21 +127,21 @@ const ContactUs = () => {
           <div className={styles.ourContactContainer}>
             <div className={styles.ourContactTextBox}>
               <div className={styles.ourContactAddressLine}>
-                <div className={styles.ourContactIcon}><i className="fas fa-phone-square"></i></div>
+                <div className={styles.ourContactIcon}><FaPhoneSquare /></div>
                 <div>
                   <h3><span>Telephone</span></h3>
                   <h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h4>
                 </div>
               </div>
               <div className={styles.ourContactAddressLine}>
-                <div className={styles.ourContactIcon}><i className="fas fa-at"></i></div>
+                <div className={styles.ourContactIcon}><FaAt /></div>
                 <div>
                   <h3><span>E-mail</span></h3>
                   <h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h4>
                 </div>
               </div>
               <div className={styles.ourContactAddressLine}>
-                <div className={styles.ourContactIcon}><i className="fas fa-map-marker-alt"></i></div>
+                <div className={styles.ourContactIcon}><FaMapMarkerAlt /></div>
                 <div>
                   <h3><span>Address</span></h3>
                   <h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h4>

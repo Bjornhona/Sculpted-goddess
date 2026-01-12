@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Open_Sans, Cinzel } from "next/font/google";
 import "./globals.scss";
 import Header from "@/components/header/Header";
@@ -35,10 +34,6 @@ export default function RootLayout({
         <meta property="og:image" content="/images/sculpted-goddess-frontpage.png" />
         <meta property="og:url" content="https://sculptedgoddess.vercel.app" />
         <meta property="og:type" content="website" />
-        <Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
-          strategy="lazyOnload"
-        ></Script>
       </head>
       <body className={`${openSans.variable} ${cinzel.variable}`}>
         <Header />

@@ -2,6 +2,7 @@
 import styles from "./desiredWeight.module.scss";
 import { useWeight } from "@/components/macro-calculator/WeightContext";
 import { saveDietProfile } from "@/actions/macro-actions";
+import { FaDumbbell, FaWeight } from "react-icons/fa";
 
 interface DesiredWeightProps {
   onSave: () => void;
@@ -59,7 +60,7 @@ const DesiredWeight = ({ onSave }: DesiredWeightProps) => {
                 required
               />
               <label className={styles.gain} htmlFor="gain">
-                <i className="fas fa-dumbbell"></i>
+                <FaDumbbell />
                 <div className={styles.textBox}>
                   <h3>I want to</h3>
                   <h2>gain muscle</h2>
@@ -77,7 +78,7 @@ const DesiredWeight = ({ onSave }: DesiredWeightProps) => {
                 onChange={() => setAction("lose")}
               />
               <label className={styles.lose} htmlFor="lose">
-                <i className="fas fa-weight"></i>
+                <FaWeight />
                 <div className={styles.textBox}>
                   <h3>I want to</h3>
                   <h2>lose weight</h2>
