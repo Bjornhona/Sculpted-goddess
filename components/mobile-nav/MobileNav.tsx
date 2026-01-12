@@ -47,8 +47,8 @@ const MobileNav = ({ isLoggedIn }: MobileNavProps) => {
           className={`${styles.menu} ${isOpen ? styles.open : ""}`}
           onClick={(e) => e.stopPropagation()}
         >
-          <nav>
-            <ul className={styles.desktopNav}>
+          <nav className={styles.desktopNav}>
+            <ul>
               <li>
                 <Link href="/" className={pathname === "/" ? styles.active : undefined}>Home</Link>
               </li>

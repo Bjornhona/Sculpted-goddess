@@ -183,15 +183,17 @@ nav {
   }
   a:link,
   a:visited {
-    padding: 0 1vw;
+    padding: 0 0.75rem;
   }
   button {
     all: unset;
+    display: inline-block;
     font-size: var(--font-p-size);
     font-weight: 600;
     text-transform: uppercase;
     color: $white;
     text-decoration: none;
+    padding: 0 0.75rem;
   }
   a:hover,
   a:active,

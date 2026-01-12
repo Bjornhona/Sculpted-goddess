@@ -10,11 +10,9 @@ const AuthNavbar = ({isLoggedIn}: {isLoggedIn: boolean}) => {
   return (
     <nav id={'authNavbar'} className={styles.desktopNav}>
       {isLoggedIn ?
-        <form action={logout}>
-          <ul id={'logout'} className={styles.active}>
-            <li><button>Logout</button></li>
-          </ul>
-        </form>
+        <ul id={'login'} className={styles.active} >
+          <li><Link href="#" onClick={logout}>Logout</Link></li>
+        </ul>
         :
         <ul id={'login'}>
           {/* <li><Link href="/register" className={path.startsWith('/register') ? styles.active : undefined}>Signup</Link></li> */}
