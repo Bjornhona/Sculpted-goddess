@@ -11,3 +11,14 @@
     display: none;
   }
 }
+
+.footerNav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  @media (min-width: $mobile) {
+    flex-direction: row;
+  }
+}

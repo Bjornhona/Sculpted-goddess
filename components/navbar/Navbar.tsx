@@ -3,11 +3,11 @@ import styles from './navbar.module.scss';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const Navbar = () => {
+const Navbar = ({isFooter = false}: {isFooter: boolean}) => {
   const path = usePathname();
 
   return (
-    <nav id={'navbar'} className={styles.desktopNav}>
+    <nav id={'navbar'} className={isFooter ? styles.footerNav : styles.desktopNav}>
       <ul>
         <li><Link href="/about_us" className={path.startsWith('/about_us') ? styles.active : undefined}>about us</Link></li>
         <li><Link href="/eat_healthy" className={path.startsWith('/eat_healthy') ? styles.active : undefined}>eat healthy</Link></li>

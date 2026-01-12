@@ -14,7 +14,7 @@ const Footer = () => {
         <div className={styles.upperFooter}>
           <Logo />
           <SocialNavbar />
-          <Navbar />
+          <Navbar isFooter={true} />
         </div>
         <div className={styles.lowerFooter}>
           <p>MADE WITH <span><i className="fas fa-heart"></i></span> BY <a href="https://www.graphicsbyasa.com/" target="_blank">Graphics by Åsa</a></p>
