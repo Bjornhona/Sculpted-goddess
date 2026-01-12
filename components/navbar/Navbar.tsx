@@ -3,7 +3,7 @@ import styles from './navbar.module.scss';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const Navbar = ({isFooter = false}: {isFooter: boolean}) => {
+const Navbar = ({isFooter = false}: {isFooter?: boolean}) => {
   const path = usePathname();
 
   return (

@@ -8,7 +8,7 @@ const Logo = () => {
   const path = usePathname();
 
   return (
-    <nav>
+    <nav id={'logoNav'}>
       <Link href="/" className={styles.logo}>
         <Image src="/images/logo.png" alt="Sculpted Goddess" width={100} height={100} />
         <span className={`${styles.navbarBrand} ${path === '/' ? styles.active : undefined}`}>Sculpted Goddess</span>

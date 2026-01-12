@@ -1,27 +1,29 @@
 /* --- logo --- */
 
-.navbarBrand {
-  font-family: var(--font-cinzel);
-  line-height: 1;
-  font-weight: 700;
-  font-size: var(--font-h3-size);
-  letter-spacing: 0.1rem;
-  width: 13vw;
-  text-align: left;
-  display: flex;
-  align-items: center;
-}
 .logo {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 0 !important;
   img {
     width: 3rem;
     height: 3rem;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: var(--border-radius);
+  }
+  .navbarBrand {
+    word-spacing: 100vw;
+    width: min-content;
+    font-family: var(--font-cinzel);
+    line-height: 1;
+    font-weight: 700;
+    font-size: var(--font-h3-size);
+    letter-spacing: 0.1rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
   }
 }
 
