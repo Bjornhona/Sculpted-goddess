@@ -3,14 +3,14 @@
 #header {
   display: flex;
   justify-content: space-between;
-  padding: 2vw;
+  padding: 1rem;
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 200;
-  height: 7vw;
-  margin-top: -7vw;
+  height: 4rem;
+  margin-top: -4rem;
   background-image: linear-gradient(rgba(black , 0.6), transparent);
   
   .desktopNav {
@@ -20,6 +20,7 @@
 
 @media (max-width: $tablet) {
   #header {
+    padding: 0.75rem;
     .desktopNav {
       display: none;
     }
