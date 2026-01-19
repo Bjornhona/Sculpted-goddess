@@ -25,6 +25,34 @@
     margin: 3vw 0 0 23vw;
     z-index: 100;
   }
+  @media (max-width: $tablet) {
+    height: 48vw;
+    .contactUsHeaderImage {
+      height: 35vw;
+      img {
+        max-height: 42vw;
+        right: 15vw;
+      }
+    }
+    .contactUsHeaderBox {
+      width: 70vw;
+      margin: 9vw 0 0 8vw;
+    }
+  }
+  @media (max-width: $mobile) {
+    height: 75vw;
+    .contactUsHeaderImage {
+      height: 45vw;
+      img {
+        max-height: 67vw;
+        right: 5vw;
+      }
+    }
+    .contactUsHeaderBox {
+      margin: 9vw 0 0 0;
+      width: 85vw;
+    }
+  }
 }
 
 /* --- main section --- */
@@ -37,28 +65,25 @@
     margin: 6vw;
     padding: 3vw;
     position: relative;
-    height: 55vw;
     .contactUsMainImage {
-      position: absolute;
-      top: 0;
-      right: -3vw;
-      height: 55vw;
       img {
         width: auto;
-        max-height: 55vw;
         z-index: 200;
+        height: 100%;
+        position: absolute;
+        right: -3vw;
+        top: 0;
+        bottom: 0;
       }
     }
     .contactFormContainer {
       background-color: $light-pink;
       width: 40vw;
-      height: 100%;
-      border-radius: 0.5vw;
+      border-radius: var(--border-radius);
       box-shadow: 0 3px 12px rgba(#000000, 0.3);
-      position: relative;
       h2 {
         background-color: $dark-pink;
-        border-radius: 0.5vw 0.5vw 0 0;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
         padding: 3vw 0;
         text-align: center;
         span {
@@ -73,8 +98,8 @@
         ::placeholder {
           color: $medium-grey;
           opacity: 1;
-          font-size: $font-button-size;
-          font-family: "Open Sans", sans-serif;
+          font-size: $font-h3-size;
+          font-family: var(--font-open-sans);
         }
         div {
           display: flex;
@@ -83,11 +108,15 @@
             background-color: $dark-pink;
             padding: 1vw 2vw;
             margin: 1vw 0;
-            border-radius: 0.5vw 0 0 0.5vw;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            svg {
+              width: 1.5em;
+              height: 1.5em;
+            }
           }
           input, textarea {
             border: none;
-            border-radius: 0 0.5vw 0.5vw 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
             padding: 1vw 2vw;
             margin: 1vw 0;
             width: 22vw;
@@ -101,6 +130,41 @@
         button:hover {
           background-color: $medium-pink;
           border: 2px solid $white;
+        }
+      }
+    }
+    @media (max-width: $tablet) {
+      overflow: hidden;
+      .contactUsMainImage {
+        img {
+          right: -20vw;
+        }
+      }
+      .contactFormContainer {
+        width: 45vw;
+        form div {
+          span svg {
+            width: 1em;
+            height: 1em;
+          }
+          input, textarea {
+            width: 30vw;
+          }
+        }
+      }
+    }    
+    @media (max-width: $mobile) {
+      .contactUsMainImage {
+        img {
+          display: none;
+        }
+      }
+      .contactFormContainer {
+        width: 100%;
+        form div {
+          input, textarea {
+            width: 60vw;
+          }
         }
       }
     }
