@@ -10,8 +10,8 @@ import Link from 'next/link';
 const Home = () => {
   return (
     <main>
-      <header className={[styles.carousel, styles.sharedBox].join(" ")}>
-        <div className={[styles.carouselBox, styles.sharedBoxContent].join(" ")}>
+      <header className={styles.carousel}>
+        <div className={styles.carouselBox}>
           <h1><span>Get in</span> Shape</h1>
           <div className={styles.textBox}>
             <h3>Your Guide to Getting Fit & Toned at Any Age — Let’s Make Healthy Living Easy.</h3>

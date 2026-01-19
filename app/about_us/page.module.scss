@@ -1,4 +1,5 @@
 @import '@/public/styles/sharedContent.module.scss';
+@import "@/public/styles/breakPoints.scss";
 
 /* --- header section --- */
 
@@ -27,6 +28,42 @@
   }
 }
 
+@media (max-width: $tablet) {
+  .aboutUsHeader {
+    height: 48vw;
+    .aboutUsHeaderImage {
+      height: 35vw;
+      img {
+        max-height: 35vw;
+        right: 5vw;
+        bottom: 3vw;
+      }
+    }
+    .aboutUsHeaderBox {
+      width: 70vw;
+      margin: 9vw 0 0 8vw;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .aboutUsHeader {
+    height: 75vw;
+    .aboutUsHeaderImage {
+      height: 45vw;
+      img {
+        max-height: 45vw;
+        right: -5vw;
+        bottom: 10vw;
+      }
+    }
+    .aboutUsHeaderBox {
+      margin: 9vw 0 0 0;
+      width: 75vw;
+    }
+  }
+}
+
 /* --- main section --- */
 
 .lifestyle {
@@ -37,7 +74,7 @@
     margin: 6vw;
     padding: 6vw;
     position: relative;
-    height: 50vw;
+    // height: 50vw;
     .lifestyleTextContainer {
       position: relative;
       z-index: 100;
@@ -48,17 +85,42 @@
       }
       h3 {
         color: $dark-grey;
-        max-width: 50%;
+        max-width: 50vw;
       }
     }
     .aboutUsMainImage {
       position: absolute;
-      top: 3vw;
-      right: 12vw;
+      // top: 3vw;
+      right: 8vw;
       height: 50vw;
       img {
         width: auto;
         max-height: 50vw;
+      }
+    }
+    @media (max-width: $tablet) {
+      .lifestyleTextContainer {
+        h3 {
+          max-width: 60vw;
+        }
+      }
+      .aboutUsMainImage {
+        top: unset;
+        right: 0;
+        height: 55vw;
+        img {
+          max-height: 55vw;
+        }
+      }
+    }
+    @media (max-width: $mobile) {
+      .aboutUsMainImage {
+        top: unset;
+        right: -5vw;
+        height: 90vw;
+        img {
+          max-height: 90vw;
+        }
       }
     }
   }
@@ -71,6 +133,7 @@
   background-color: $medium-grey;
   padding: 6vw;
   h1 {
+    text-align: center;
     span {
       color: $light-green;
     }
@@ -94,6 +157,9 @@
         color: $light-green;
         padding: 1vw;
       }
+    }
+    @media (max-width: $mobile) {
+      flex-direction: column;
     }
   }
 }
