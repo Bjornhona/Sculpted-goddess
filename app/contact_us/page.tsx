@@ -4,7 +4,6 @@ import { sendContactMessage } from '@/actions/contact-actions';
 import Image from 'next/image';
 import contactUs1Image from '/public/images/contact-us1.png';
 import contactUs2Image from "/public/images/contact-us2.png";
-import mapImage from '/public/images/map.png';
 import styles from './page.module.scss';
 import { FaUser, FaDumbbell, FaCommentDots, FaPhoneSquare, FaAt, FaMapMarkerAlt } from "react-icons/fa";
 
@@ -149,7 +148,12 @@ const ContactUs = () => {
               </div>
             </div>
             <div className={styles.contactUsMap}>
-              <Image src={mapImage} alt="map of Barcelona" />
+              <iframe
+                src="https://www.google.com/maps?q=Barcelona&output=embed"
+                width="100%"
+                height="400"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
