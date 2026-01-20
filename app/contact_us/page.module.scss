@@ -192,6 +192,7 @@
   }
   .ourContactContainer {
     display: flex;
+    gap: 1rem;
     padding-top: 3vw;
     .ourContactTextBox {
       display: flex;
@@ -199,21 +200,30 @@
       justify-content: space-between;
       padding: 0 1vw;
       width: 30vw;
+      gap: 1rem;
       .ourContactAddressLine{
         display: flex;
+        gap: 1rem;
         .ourContactIcon {
           font-size: $font-h2-size;
           color: $light-green;
-          width: 10vw;
         }
+      }
+    }
+    @media (max-width: $tablet) {
+      display: grid;
+      grid-template-areas: "overlap-content";
+      .ourContactTextBox {
+        width: 100%;
       }
     }
   }
   .contactUsMap {
-    height: 20vw;
+    grid-area: overlap-content;
     img {
-      width: auto;
-      max-height: 20vw;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       right: 20vw;
       bottom: 0;
     }
