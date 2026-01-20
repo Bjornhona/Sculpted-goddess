@@ -4,25 +4,45 @@
 .eatHealthyHeader {
   @extend %sharedBox;
   background: radial-gradient(closest-side, $light-orange, $light-orange, $dark-orange);
-  height: 35vw;
   overflow: hidden;
   span {
     color: $light-green;
   }
   .eatHealthyHeaderImage {
-    height: 40vw;
     img {
       width: auto;
-      max-height: 40vw;
+      height: 100%;
       position: absolute;
       right: 21vw;
       bottom: -10vw;
     }
   }
   .eatHealthyHeaderBox {
-    @extend %sharedBoxContent;
+    padding: 3.5vw 5vw;
+    width: 55vw;
     margin: 3vw 0 0 22vw;
     z-index: 100;
+  }
+  @media (max-width: $tablet) {
+    .eatHealthyHeaderImage {
+      img {
+        right: 15vw;
+      }
+    }
+    .eatHealthyHeaderBox {
+      margin: 9vw 0 0 8vw;
+    }
+  }
+  @media (max-width: $mobile) {
+    .eatHealthyHeaderImage {
+      img {
+        right: 5vw;
+      }
+    }
+    .eatHealthyHeaderBox {
+      margin: 9vw 0 0 3vw;
+      width: 75vw;
+    }
   }
 }
 
