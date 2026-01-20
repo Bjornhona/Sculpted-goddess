@@ -134,7 +134,8 @@ a:active {
 
 button {
   font-size: var(--font-button-size);
-  padding: 1rem 2rem;
+  line-height: 1.4;
+  padding: 1.5rem 3rem;
   min-width: 10rem;
   background-color: transparent;
   color: $white;
@@ -156,13 +157,11 @@ button {
   &:active {
     transform: translateY(0);
   }
-  @media (min-width: $tablet) {
-    padding: 1.2rem 2.1rem;
-    min-width: 10rem;
+  @media (max-width: $tablet) {
+    padding: 1.25rem 2.5rem;
   }
-  @media (min-width: $desktop) {
-    padding: 1.4rem 2.2rem;
-    min-width: 10rem;
+  @media (max-width: $desktop) {
+    padding: 1rem 2rem;
   }
 }
 

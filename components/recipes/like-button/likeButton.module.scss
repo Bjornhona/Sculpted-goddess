@@ -1,7 +1,7 @@
 .likeButton {
   position: absolute;
-  top: 1vw;
-  right: 1vw;
+  top: 0.5rem;
+  right: 0.5rem;
   background: $white;
   border: none;
   cursor: pointer;
@@ -13,8 +13,8 @@
   z-index: 100;
 
   .heart {
-    width: 2vw;
-    height: 2vw;
+    width: 1.5rem;
+    height: 1.5rem;
     transition: transform 0.2s ease;
     stroke: $dark-blue;
     fill: transparent;

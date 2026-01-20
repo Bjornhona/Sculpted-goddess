@@ -154,6 +154,9 @@
       }
     }    
     @media (max-width: $mobile) {
+      background-color: transparent;
+      margin: 0;
+      padding: 5vw;
       .contactUsMainImage {
         img {
           display: none;

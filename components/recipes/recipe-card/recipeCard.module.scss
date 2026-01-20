@@ -3,11 +3,10 @@
   color: $dark-grey;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 1vw;
+  border-radius: var(--border-radius);
   overflow: hidden;
   background-color: $white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.08);
-  
   &:hover {
     transform: translateY(-0.8vw) scale(1.02);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 12px 32px rgba(0, 0, 0, 0.12);
@@ -33,14 +32,14 @@
   }
   
   .recipeSelector {
-    border-radius: 1vw;
+    border-radius: var(--border-radius);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
     
     .smallRecipeImage {
-      height: 14vw;
+      max-height: 14rem;
       width: 100%;
       overflow: hidden;
       display: flex;
@@ -75,8 +74,7 @@
     }
     
     .smallRecipeText {
-      // background-color: $white;
-      width: 20vw;
+      width: 100%;
       padding: 1.5rem;
       min-height: auto;
       display: flex;
@@ -97,10 +95,15 @@
         }
         
         p {
-          color: $medium-grey;
           font-style: italic;
         }
       }
+      @media (max-width: $tablet) {
+        padding: 1.5rem 1rem;
+      }
+      // @media (max-width: $mobile) {
+      //   padding: 1.5rem 0.5rem;
+      // }
     }
     
     &:hover .smallRecipeText {

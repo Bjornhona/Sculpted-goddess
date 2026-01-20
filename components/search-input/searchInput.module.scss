@@ -1,14 +1,20 @@
 .search {
   display: flex;
-  border: 1.5px solid $white;
+  border: 1px solid $white;
   border-radius: var(--border-radius);
-  margin-bottom: 0.5vw;
+  margin-bottom: 0.25rem;
   input {
     background-color: transparent;
     border: none;
     color: $white;
     width: 100%;
     padding: 1rem 2rem 1rem 0;
+    @media (max-width: $tablet) {
+      padding: 1rem 1rem 1rem 0;
+    }
+    @media (max-width: $mobile) {
+      padding: 0.5rem 1rem 0.5rem 0;
+    }
   }
   ::placeholder {
     color: $white;
@@ -20,6 +26,12 @@
   .searchIcon {
     display: flex;
     align-items: center;
-    padding: 0.8vw 1.5vw;
+    padding: 1rem;
+    @media (max-width: $tablet) {
+      padding: 0.75rem;
+    }
+    @media (max-width: $mobile) {
+      padding: 0.5rem;
+    }
   }
 }
