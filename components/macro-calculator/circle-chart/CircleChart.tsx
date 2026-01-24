@@ -13,7 +13,7 @@ interface CircleChartProps {
 const CircleChart = ({ title, value, result, circumference, offset, unit, resultTitle }: CircleChartProps) => {
   return (
     <div className={styles.macroCard}>
-      <h3>{title}</h3>
+      <h3><strong>{title}</strong></h3>
       <div className={styles.cardCircle}>
         <div className={styles.percent}>
           <svg
@@ -40,6 +40,8 @@ const CircleChart = ({ title, value, result, circumference, offset, unit, result
             <h3>{unit}</h3>
           </div>
         </div>
+      </div>
+      <div className={styles.resultContainer}>
         <h3>{resultTitle}</h3>
         <h4>{result && result}</h4>
       </div>

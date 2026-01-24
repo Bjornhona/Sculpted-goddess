@@ -40,13 +40,13 @@ const WeightContext = createContext<WeightContextType>(null!);
 interface WeightProviderProps {
   children: React.ReactNode;
   initialValues?: {
-    gender?: number | null;
+    gender?: -161 | 5 | null;
     weight?: number | null;
     height?: number | null;
     age?: number | null;
-    activity?: number | null;
+    activity?: 1.2 | 1.375 | 1.55 | 1.725 | 1.9 | null;
     desiredWeight?: number | null;
-    action?: string | null;
+    action: "lose" | "gain" | null;
   };
 }
 
@@ -76,14 +76,33 @@ export function WeightProvider({ children, initialValues }: WeightProviderProps)
   // Mifflin-St Jeor BMR
   const bmr =
     gender !== null && weight !== null && height !== null && age !== null
-      ? gender === 1
+      ? gender === 5
         ? 10 * weight + 6.25 * height - 5 * age + 5
         : 10 * weight + 6.25 * height - 5 * age - 161
       : null;
 
-  // Activity multiplier
-  const recommendedCalIntake =
+  const tdee =
     bmr !== null && activity !== null ? Math.round(bmr * activity) : null;
+
+  const recommendedCalIntake = (() => {
+    if (tdee === null || action === null) return null;
+  
+    let calories = tdee;
+  
+    if (action === "lose") {
+      calories -= 500; // safe, sustainable deficit
+    }
+  
+    if (action === "gain") {
+      calories += 300; // lean muscle gain
+    }
+  
+    // Safety floor
+    if (gender === -161 && calories < 1200) calories = 1200; // female
+    if (gender === 5 && calories < 1500) calories = 1500; // male
+  
+    return Math.round(calories);
+  })();
 
   // Macros (40/30/30)
   const carbs = recommendedCalIntake

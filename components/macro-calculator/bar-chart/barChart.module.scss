@@ -1,4 +1,8 @@
 .barChart {
+  h4 {
+    color: $dark-blue;
+    margin: 0;
+  }
   &:nth-child(1) .barHolder .progress {
     background-image: linear-gradient(100deg, $fuccia, $dark-orange);
   }
@@ -13,9 +17,15 @@
   width: 100%;
   background-color: $light-grey;
   border-radius: 20px;
-  margin: 0.5vw auto;
+  margin: 0.25rem auto;
   .bar {
     border-radius: 20px;
-    height: 1vw;
+    height: 0.75rem;
+  }
+  @media (min-width: $tablet) {
+    margin: 0.5rem auto;
+    .bar {
+      height: 0.5rem;
+    }
   }
 }

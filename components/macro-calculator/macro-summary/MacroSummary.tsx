@@ -12,37 +12,39 @@ const MacroSummary = () => {
 
   return (
     <div className={styles.manageWeightMainCards}>
-      <div className={`${styles.mainHeaderText} ${styles.mainThreeHeaderText}`}>
-        <h2>
-          <span>Macronutrient</span> summary
-        </h2>
-        <h3>To use as a guide when you plan your meals</h3>
-      </div>
+      <div className={styles.mainContainer}>
+        <div className={`${styles.mainHeaderText} ${styles.mainThreeHeaderText}`}>
+          <h2>
+            <span>Macronutrient</span> summary
+          </h2>
+          <h3>To use as a guide when you plan your meals</h3>
+        </div>
 
-      <div className={styles.macronutrientSummary} id="macronutrientSummary">
-        <h3>Congratulations, here is your Macronutrient Summary!</h3>
-        <div className={styles.macronutrientSummaryBox}>
-          {macroData.map((item) => (
-            <CircleChart key={item.title} {...item} />
-          ))}
-          <div className={styles.macroCard}>
-            <div>
-              <h3>
-                <span>Macronutrient Goals</span>
-              </h3>
-              <h3>Suggested daily intake</h3>
-            </div>
-            <div className={styles.progressBarContainer}>
-              {macroGoals.map((goal) => (
-                <BarChart key={goal.nutrient} {...goal} />
-              ))}   
+        <div className={styles.macronutrientSummary} id="macronutrientSummary">
+          <h3>Congratulations, here is your Macronutrient Summary!</h3>
+          <div className={styles.macronutrientSummaryBox}>
+            {macroData.map((item) => (
+              <CircleChart key={item.title} {...item} />
+            ))}
+            <div className={styles.macroCard}>
+              <div className={styles.macroCardHeader}>
+                <h3>
+                  <span>Macronutrient Goals</span>
+                </h3>
+                <h3>Suggested daily intake</h3>
+              </div>
+              <div className={styles.progressBarContainer}>
+                {macroGoals.map((goal) => (
+                  <BarChart key={goal.nutrient} {...goal} />
+                ))}   
+              </div>
             </div>
           </div>
-        </div>
-        <div className={styles.continueButtons}>
-          <a href="/manage_weight">
-            <button className={styles.newSearchButton}>New search</button>
-          </a>
+          <div className={styles.continueButtons}>
+            <a href="/manage_weight">
+              <button className={styles.newSearchButton}>New search</button>
+            </a>
+          </div>
         </div>
       </div>
     </div>

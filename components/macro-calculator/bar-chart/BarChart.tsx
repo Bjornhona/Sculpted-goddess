@@ -8,7 +8,7 @@ export interface BarChartProps {
 const BarChart = ({ nutrient, percentage }: BarChartProps) => {
   return (
     <div className={styles.barChart}>
-      <h3>{nutrient}</h3>
+      <h4>{nutrient}</h4>
       <div className={styles.barHolder}>
         <div
           id="bar"
