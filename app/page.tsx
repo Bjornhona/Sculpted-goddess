@@ -22,13 +22,27 @@ const Home = () => {
         </div>
       </header>
 
-      <section className={[styles.trainingPlan, styles.sharedBox].join(" ")}>
+      {/* <section className={[styles.trainingPlan, styles.sharedBox].join(" ")}>
         <div className={[styles.trainingPlanBox, styles.sharedBoxContent].join(" ")}>
             <h1><span>Training</span> Plan</h1>
             <div className={styles.textBox}>
               <h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.</h3>
             </div>
             <Link href="/get_toned"><button>get toned</button></Link>
+        </div>
+        <div className={[styles.cropped, styles.imagePositionRight].join(" ")}>
+          <Image src={trainingPlanImage} alt="dumbells" />
+        </div>
+        <span className={styles.leftBackgroundBox} />
+      </section> */}
+
+      <section className={[styles.trainingPlan, styles.sharedBox].join(" ")}>
+        <div className={[styles.trainingPlanBox, styles.sharedBoxContent].join(" ")}>
+            <h1><span>About</span> Us</h1>
+            <div className={styles.textBox}>
+              <h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.</h3>
+            </div>
+            <Link href="/about_us"><button>read more</button></Link>
         </div>
         <div className={[styles.cropped, styles.imagePositionRight].join(" ")}>
           <Image src={trainingPlanImage} alt="dumbells" />
