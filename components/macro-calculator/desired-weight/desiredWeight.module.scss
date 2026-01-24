@@ -1,146 +1,158 @@
 .manageWeightMain {
   background-color: $light-grey;
-  padding: 3vw 7vw;
+  padding: 0.5rem;
   color: $dark-grey;
-  .mainHeaderText {
-    background-color: $dark-blue;
-    color: $white;
-    border-radius: 0.5vw 0.5vw 0 0;
-    padding: 2vw;
-    text-align: center;
-    h2 {
-      span {
-        color: $light-green;
-      }
-    }
-    h3 {
-      padding: 1vw 0 0 0;
-    }
-  }
-  .mainContent {
-    background-color: $white;
-    padding: 3vw 7vw 5vw 7vw;
-    margin-bottom: 3vw;
-    h3 {
-      padding: 0 0 1vw 0;
-      span {
-        font-weight: 700;
-      }
-    }
-    .actionBox {
-      padding-bottom: 3vw;
-      .actionContainer {
-        display: flex;
-        justify-content: space-between;
-        input {
-          position: absolute;
-          opacity: 0;
-          height: 0;
-          width: 0;
-        }
-        %textBox {
-          text-align: center;
-          h3 {
-            line-height: $font-h3-size;
-            padding-bottom: 1vw;
-          }
-        }
-        .gain, .lose {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 34vw;
-          background-color: $medium-grey;
-          padding: 1vw 3vw;
-          cursor: pointer;
-          color: $white;
-          font-size: $font-h1-size;
-        }
-        .gain, .lose {
-          font-size: $font-h2-size;
-        }
-        .gainInput:hover ~ .gain {
-          background-color: $light-green;
-        }
-        .loseInput:hover ~ .lose {
-          background-color: $aqua;
-        }
-        .gainInput:checked ~ .gain {
-          background-color: $dark-green;
-        }
-        .loseInput:checked ~ .lose {
-          background-color: $light-blue;
-        }
-      }
-    }
-    .desiredWeightContainer {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 3vw;
-    }
-    button:disabled, button[disabled] {
-      color: $medium-grey;
-      border-color: $medium-grey;
-      background-color: $white;
-    }
-    button:enabled {
+  .mainContainer {
+    border-radius: var(--border-radius);
+    max-width: $tablet;
+    margin: 0 auto;
+    .mainHeaderText {
+      background-color: $dark-blue;
       color: $white;
-      border-color: $dark-orange;
-      background-color: $dark-orange;
-    }
-    button:enabled:hover {
-      background-color: $light-orange;
-      border-color: $light-orange;
-    }
-    .calculateMakro {
-      button:enabled {
-        border-color: $fuccia;
-        background-color: $fuccia;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      padding: 1rem;
+      text-align: center;
+      h2 {
+        span {
+          color: $light-green;
+        }
       }
-      button:enabled:hover {
-        background-color: $dark-pink;
-        border-color: $dark-pink;
-      }
-    }
-    .weight {
-      position: relative;
-      input {
-        border: 1px solid $medium-grey;
-        font-size: $font-h3-size;
-        height: 6vw;
-        padding: 2vw;
-        width: 15vw;
-      }
-      .unit {
-        position: absolute;
-        display: block;
-        left: 7vw;
-        top: 5.3vw;
-        z-index: 19;
-        font-weight: 400;
-        color: $medium-grey;
-        padding: 0;
-      }
-    }
-    .calculateMakro {
-      display: flex;
-      justify-content: space-between;
       h3 {
-        font-weight: 400;
-        width: 30vw;
-        text-align: right;
+        padding: 0.25rem 0 0 0;
+      }
+    }
+    .mainContent {
+      background-color: $white;
+      padding: 0.5rem 0.5rem 0.75rem 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.08);
+      h3 {
+        padding: 0 0 0.5rem 0;
         span {
           font-weight: 700;
         }
       }
+      .actionBox {
+        padding-bottom: 0.5rem;
+        h3 {
+          padding-bottom: 0.25rem;
+        }
+        .actionContainer {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0.5rem;
+          label {
+            height: 100%;
+          }
+          input {
+            position: absolute;
+            opacity: 0;
+            height: 0;
+            width: 0;
+          }
+          %textBox {
+            text-align: center;
+            h3 {
+              line-height: $font-h3-size;
+              padding-bottom: 0.25rem;
+            }
+          }
+          .gain, .lose {
+            display: flex;
+            align-items: center;
+            background-color: $medium-grey;
+            padding: 0.5rem 1.5rem;
+            cursor: pointer;
+            color: $white;
+            svg {
+              font-size: $font-h2-size;
+              width: 1.5rem;
+              height: 1.5rem;
+              margin-right: 0.5rem;
+            }
+            @media (max-width: $mobile) {
+              padding: 0.25rem 0.5rem;
+              svg {
+                display: none;
+              }
+            }
+          }
+          .gainInput:hover ~ .gain {
+            background-color: $light-green;
+          }
+          .loseInput:hover ~ .lose {
+            background-color: $aqua;
+          }
+          .gainInput:checked ~ .gain {
+            background-color: $dark-green;
+          }
+          .loseInput:checked ~ .lose {
+            background-color: $light-blue;
+          }
+        }
+      }
+      .desiredWeightContainer {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+        h3 {
+          padding-bottom: 0.25rem;
+        }
+      }
+      button:disabled, button[disabled] {
+        color: $medium-grey;
+        border-color: $medium-grey;
+        background-color: $white;
+      }
+      button:enabled {
+        color: $white;
+        border-color: $dark-orange;
+        background-color: $dark-orange;
+      }
+      button:enabled:hover {
+        background-color: $light-orange;
+        border-color: $light-orange;
+      }
+      .calculateMakro {
+        text-align: center;
+        button:enabled {
+          border-color: $fuccia;
+          background-color: $fuccia;
+        }
+        button:enabled:hover {
+          background-color: $dark-pink;
+          border-color: $dark-pink;
+        }
+      }
+      .weight {
+        position: relative;
+        .inputContainer {
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        input {
+          border: 1px solid $medium-grey;
+          padding: 1rem;
+          width: 10rem;
+          text-align: right;
+        }
+        .unit {
+          padding: 0;
+        }
+      }
     }
-  }
 
-  .mainTwoHeaderText {
-    background-color: $purple;
-    h2 {
-      span {
-        color: $yellow;
+    .mainTwoHeaderText {
+      background-color: $purple;
+      h2 {
+        span {
+          color: $yellow;
+        }
       }
     }
   }

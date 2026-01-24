@@ -1,208 +1,222 @@
 .manageWeightMain {
   background-color: $light-grey;
-  padding: 3vw 6vw;
+  padding: 0.5rem;
   color: $dark-grey;
-  border-radius: var(--border-radius);
-  .mainHeaderText {
-    background-color: $dark-blue;
-    color: $white;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
-    padding: 2vw;
-    text-align: center;
-    h2 {
-      span {
-        color: $light-green;
-      }
-    }
-    h3 {
-      padding: 1vw 0 0 0;
-    }
-  }
-  .mainContent {
-    background-color: $white;
-    padding: 3vw 3vw 5vw 3vw;
-    margin-bottom: 3vw;
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.08);
-    h3 {
-      padding: 0 0 1vw 0;
-      span {
-        font-weight: 700;
-      }
-    }
-    .genderBox {
-      padding-bottom: 3vw;
-      .genderContainer {
-        display: flex;
-        justify-content: space-between;
-        gap: 0.5rem;
-        input {
-          position: absolute;
-          opacity: 0;
-          height: 0;
-          width: 0;
+  .mainContainer {
+    border-radius: var(--border-radius);
+    max-width: $tablet;
+    margin: 0 auto;
+    .mainHeaderText {
+      background-color: $dark-blue;
+      color: $white;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      padding: 1rem;
+      text-align: center;
+      h2 {
+        span {
+          color: $light-green;
         }
-        %textBox {
-          text-align: center;
-          h3 {
-            line-height: $font-h3-size;
-            padding-bottom: 1vw;
+      }
+      h3 {
+        padding: 0.25rem 0 0 0;
+      }
+    }
+    .mainContent {
+      background-color: $white;
+      padding: 0.5rem 0.5rem 0.75rem 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.08);
+      h3 {
+        padding: 0 0 0.25rem 0;
+        span {
+          font-weight: 700;
+        }
+      }
+      .genderBox {
+        padding-bottom: 0.5rem;
+        .genderContainer {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0.5rem;
+          label {
+            height: 100%;
+          }
+          input {
+            position: absolute;
+            opacity: 0;
+            height: 0;
+            width: 0;
+          }
+          %textBox {
+            text-align: center;
+            h3 {
+              line-height: $font-h3-size;
+              padding-bottom: 0.25rem;
+            }
+          }
+          .male, .female {
+            display: flex;
+            align-items: center;
+            background-color: $medium-grey;
+            padding: 0.5rem 1.5rem;
+            cursor: pointer;
+            color: $white;
+            font-size: $font-h1-size;
+            @media (max-width: $mobile) {
+              padding: 0.25rem 0.5rem;
+              svg {
+                display: none;
+              }
+            }
+          }
+          .maleInput:hover ~ .male {
+            background-color: $aqua;
+          }
+          .femaleInput:hover ~ .female {
+            background-color: $medium-pink;
+          }
+          .maleInput:checked ~ .male {
+            background-color: $light-blue;
+          }
+          .femaleInput:checked ~ .female {
+            background-color: $dark-pink;
           }
         }
-        .male, .female {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 40vw;
-          background-color: $medium-grey;
-          padding: 1vw 3vw;
-          cursor: pointer;
-          color: $white;
-          font-size: $font-h1-size;
+      }
+      .weightHeightAgeContainer {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: space-between;
+        padding-bottom: 0.5rem;
+        @media (max-width: $mobile) {
+          flex-direction: column;
+        }
+        .weight, .height, .age {
+          .inputContainer {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          }
+          input {
+            border: 1px solid $medium-grey;
+            padding: 1rem;
+            width: 10rem;
+            text-align: right;
+          }
+          .unit {
+            padding: 0;
+          }
+          @media (max-width: $tablet) {
+            input {
+              width: 5.5rem;
+            }
+          }
           @media (max-width: $mobile) {
-            svg {
-              display: none;
+            input {
+              width: 10rem;
             }
           }
         }
-        .maleInput:hover ~ .male {
-          background-color: $aqua;
-        }
-        .femaleInput:hover ~ .female {
-          background-color: $medium-pink;
-        }
-        .maleInput:checked ~ .male {
-          background-color: $light-blue;
-        }
-        .femaleInput:checked ~ .female {
-          background-color: $dark-pink;
-        }
       }
-    }
-    .weightHeightAgeContainer {
-      display: flex;
-      gap: 1rem;
-      justify-content: space-between;
-      padding-bottom: 3vw;
-      @media (max-width: $mobile) {
-        flex-direction: column;
-      }
-      .weight, .height, .age {
-        .inputContainer {
+      .activityOptionsContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $aqua;
+        height: 0.25rem;
+        margin: 1rem 0;
+        .container {
           position: relative;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-        input {
-          border: 1px solid $medium-grey;
-          padding: 1rem;
-          width: 10rem;
-          text-align: right;
-        }
-        .unit {
+          cursor: pointer;
           padding: 0;
+          margin-bottom: 2rem;
+          margin-right: 2rem;
+        }
+        .container input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 2rem;
+          width: 2rem;
+          background-color: $white;
+          border-radius: 50%;
+          border: solid $aqua;
+        }
+        .container:hover input ~ .checkmark {
+          background-color: $light-grey;
+        }
+        .container input:checked ~ .checkmark {
+          background-color: $dark-blue;
         }
         @media (max-width: $tablet) {
-          input {
-            width: 5.5rem;
+          .container {
+            margin-bottom: 1.5rem;
+            margin-right: 1.5rem;
+          }
+          .checkmark {
+            height: 1.5rem;
+            width: 1.5rem;
           }
         }
         @media (max-width: $mobile) {
-          input {
-            width: 10rem;
+          .container {
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+          }
+          .checkmark {
+            height: 1rem;
+            width: 1rem;
           }
         }
       }
-    }
-    .activityOptionsContainer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: $aqua;
-      height: 1vw;
-      margin: 1rem 0;
-      .container {
-        position: relative;
-        cursor: pointer;
-        padding: 0;
-        margin-bottom: 2rem;
-        margin-right: 2rem;
+      .labelText {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+        h4 {
+          margin: 0;
+        }
       }
-      .container input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-      }
-      .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 2rem;
-        width: 2rem;
+      button:disabled, button[disabled] {
+        color: $medium-grey;
+        border-color: $medium-grey;
         background-color: $white;
-        border-radius: 50%;
-        border: solid $aqua;
       }
-      .container:hover input ~ .checkmark {
-        background-color: $light-grey;
+      button:enabled {
+        color: $white;
+        border-color: $dark-orange;
+        background-color: $dark-orange;
       }
-      .container input:checked ~ .checkmark {
-        background-color: $dark-blue;
+      button:enabled:hover {
+        background-color: $light-orange;
+        border-color: $light-orange;
       }
-      @media (max-width: $tablet) {
-        .container {
-          margin-bottom: 1.5rem;
-          margin-right: 1.5rem;
-        }
-        .checkmark {
-          height: 1.5rem;
-          width: 1.5rem;
-        }
+      .calculateCalories {
+        text-align: center;
       }
-      @media (max-width: $mobile) {
-        .container {
-          margin-bottom: 1rem;
-          margin-right: 1rem;
-        }
-        .checkmark {
-          height: 1rem;
-          width: 1rem;
-        }
+      @media (min-width: $mobile) {
+        padding: 1rem 1rem 1.5rem 1rem;
+      }
+      @media (min-width: $tablet) {
+        padding: 1rem 1rem 1.5rem 1rem;
       }
     }
-    .labelText {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 1rem;
-      h4 {
-        margin: 0;
-      }
-    }
-    button:disabled, button[disabled] {
-      color: $medium-grey;
-      border-color: $medium-grey;
-      background-color: $white;
-    }
-    button:enabled {
-      color: $white;
-      border-color: $dark-orange;
-      background-color: $dark-orange;
-    }
-    button:enabled:hover {
-      background-color: $light-orange;
-      border-color: $light-orange;
-    }
-    .calculateCalories {
-      @media (max-width: $mobile) {
-        button {
-          width: 100%;
-        }
-      }
-    }
+  }
+  @media (min-width: $mobile) {
+    padding: 0.75rem;
+  }
+  @media (min-width: $tablet) {
+    padding: 1rem;
   }
 }
