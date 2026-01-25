@@ -22,6 +22,7 @@ export interface WeightContextType {
   // Calculated
   bmi: number | null;
   bmiResult: string | null;
+  tdee: number | null;
   recommendedCalIntake: number | null;
   carbs: number | null;
   prot: number | null;
@@ -161,6 +162,7 @@ export function WeightProvider({ children, initialValues }: WeightProviderProps)
         // Calculated
         bmi,
         bmiResult,
+        tdee,
         recommendedCalIntake,
         carbs,
         prot,

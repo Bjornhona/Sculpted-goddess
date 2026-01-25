@@ -9,7 +9,7 @@ interface DesiredWeightProps {
 }
 
 const DesiredWeight = ({ onSave }: DesiredWeightProps) => {
-  const { gender, weight, height, age, activity, recommendedCalIntake, desiredWeight, setDesiredWeight, action, setAction } = useWeight();
+  const { gender, weight, height, age, activity, tdee, desiredWeight, setDesiredWeight, action, setAction } = useWeight();
 
   const saveUserData = async (formData: FormData) => {
     await saveDietProfile(formData);
@@ -41,7 +41,7 @@ const DesiredWeight = ({ onSave }: DesiredWeightProps) => {
           <input type="hidden" name="activity" value={activity ?? ""} />
           <h3>
             Congratulations, your total number of calories burned in a day is{" "}
-            <span>{recommendedCalIntake}</span> cal!
+            <span>{tdee}</span> cal!
           </h3>
 
           <div className={styles.actionBox}>
