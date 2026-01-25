@@ -10,8 +10,8 @@ const AuthNavbar = ({isLoggedIn}: {isLoggedIn: boolean}) => {
   return (
     <nav id={'authNavbar'} className={styles.desktopNav}>
       {isLoggedIn ?
-        <ul id={'login'} className={styles.active} >
-          <li><Link href="#" onClick={logout}>Logout</Link></li>
+        <ul id={'logout'} className={styles.active} onClick={() => logout()}>
+          <li><Link href="#">Logout</Link></li>
         </ul>
         :
         <ul id={'login'}>

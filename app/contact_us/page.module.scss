@@ -108,7 +108,7 @@
             background-color: $dark-pink;
             padding: 1vw 2vw;
             margin: 1vw 0;
-            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            border-radius: calc(var(--border-radius)/2) 0 0 calc(var(--border-radius)/2);
             svg {
               width: 1.5em;
               height: 1.5em;
@@ -116,7 +116,7 @@
           }
           input, textarea {
             border: none;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            border-radius: 0 calc(var(--border-radius)/2) calc(var(--border-radius)/2) 0;
             padding: 1vw 2vw;
             margin: 1vw 0;
             width: 22vw;
