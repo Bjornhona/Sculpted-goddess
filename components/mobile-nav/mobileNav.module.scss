@@ -2,6 +2,7 @@
 
 .mobileNav {
   display: none;
+  position: relative;
 }
 
 .active {
@@ -41,6 +42,9 @@
   }
 
   &.open {
+    position: fixed;
+    top: 0.75rem;
+    right: 0.35rem;
     padding: 0.5rem;
     span {
       &:first-child {

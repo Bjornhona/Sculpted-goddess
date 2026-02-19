@@ -129,21 +129,24 @@ const ContactUs = () => {
                 <div className={styles.ourContactIcon}><FaPhoneSquare /></div>
                 <div>
                   <h3><span>Telephone</span></h3>
-                  <h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h4>
+                  <h4>+34 600 000 000</h4>
                 </div>
               </div>
               <div className={styles.ourContactAddressLine}>
                 <div className={styles.ourContactIcon}><FaAt /></div>
                 <div>
                   <h3><span>E-mail</span></h3>
-                  <h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h4>
+                  <h4>info@sculptedgoddess.com</h4>
                 </div>
               </div>
               <div className={styles.ourContactAddressLine}>
                 <div className={styles.ourContactIcon}><FaMapMarkerAlt /></div>
                 <div>
                   <h3><span>Address</span></h3>
-                  <h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h4>
+                  <h4>Sculpted Goddess</h4>  
+                  <h4>Online Wellness Platform</h4>
+                  <h4>Based in Barcelona, Spain</h4>
+                  <h4>Serving women worldwide</h4>
                 </div>
               </div>
             </div>

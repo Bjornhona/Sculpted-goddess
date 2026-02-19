@@ -145,7 +145,8 @@
     }
   }
   .serviceContainer {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     padding-top: 2vw;
     .serviceTextBox {
       display: flex;
@@ -159,7 +160,7 @@
       }
     }
     @media (max-width: $mobile) {
-      flex-direction: column;
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }

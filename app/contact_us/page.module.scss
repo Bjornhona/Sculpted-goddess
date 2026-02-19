@@ -68,7 +68,7 @@
     .contactUsMainImage {
       img {
         width: auto;
-        z-index: 200;
+        z-index: 110;
         height: 100%;
         position: absolute;
         right: -3vw;
@@ -207,6 +207,9 @@
       .ourContactAddressLine{
         display: flex;
         gap: 1rem;
+        h4 {
+          text-transform: none;
+        }
         .ourContactIcon {
           font-size: $font-h2-size;
           color: $light-green;
