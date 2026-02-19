@@ -23,7 +23,7 @@ const AboutUs = () => {
         <div className={styles.lifestyleContentBox}>
           <div className={styles.lifestyleTextContainer}>
             <h1><span>Creating</span> your lifestyle</h1>
-            <h3>At Sculpted Goddess, we believe fitness is more than workouts — it’s a lifestyle. Whether you're just starting out or leveling up your healthy habits, we provide the tools, support, and motivation you need to succeed. Our approach blends simple, science-backed training, delicious healthy eating, and real-world guidance so you can feel stronger, look fitter, and live confidently every day.</h3>
+            <h3>At Sculpted Goddess, we believe fitness is more than workouts — it’s a lifestyle. Whether you’re just starting out or leveling up your healthy habits, we provide the tools, support, and motivation you need to succeed. Our approach blends simple, science-backed training, delicious healthy eating, and real-world guidance so you can feel stronger, look fitter, and live confidently every day.</h3>
           </div>
           <div className={styles.aboutUsMainImage}>
             <Image src={aboutUs2Image} alt="jumping girl" />
