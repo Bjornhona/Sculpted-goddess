@@ -1,0 +1,192 @@
+@import "@/public/styles/colors";
+@import "@/public/styles/fontSizes";
+@import "@/public/styles/breakPoints";
+
+.page {
+  background-color: $black;
+  min-height: 100vh;
+  padding: 5rem 2rem;
+}
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+// ── Section label ──────────────────────────────────────
+.sectionLabel {
+  font-family: var(--font-open-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: $medium-grey;
+  margin-bottom: 0.75rem;
+}
+
+// ── Colour swatches ────────────────────────────────────
+.swatchGroup {
+  margin-bottom: 1.25rem;
+}
+
+.swatchGroupLabel {
+  font-family: var(--font-open-sans);
+  font-size: 0.65rem;
+  color: $darker-grey;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.3px;
+}
+
+.swatchRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.swatchDot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.swatchName {
+  font-family: var(--font-open-sans);
+  font-size: 0.55rem;
+  color: $darker-grey;
+  text-align: center;
+  max-width: 50px;
+  line-height: 1.3;
+}
+
+// ── Divider ────────────────────────────────────────────
+.divider {
+  border: none;
+  border-top: 1px solid $light-grey;
+  margin: 1.75rem 0;
+}
+
+// ── Typography scale ───────────────────────────────────
+.typeRow {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid $light-grey;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.typeMeta {
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.typeTag {
+  font-family: var(--font-open-sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $darker-grey;
+}
+
+.typeDetail {
+  font-family: var(--font-open-sans);
+  font-size: 0.6rem;
+  color: $medium-grey;
+}
+
+// ── Type samples ───────────────────────────────────────
+.sampleH1 {
+  font-family: var(--font-cinzel);
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $light-pink;
+  line-height: 1;
+}
+
+.sampleH2 {
+  font-family: var(--font-open-sans);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: $light-green;
+  line-height: 1.2;
+}
+
+.sampleH3 {
+  font-family: var(--font-open-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  color: $light-blue;
+  line-height: 1.3;
+}
+
+.sampleH4 {
+  font-family: var(--font-open-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $light-grey;
+}
+
+.sampleP {
+  font-family: var(--font-open-sans);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: $light-grey;
+  line-height: 1.4;
+}
+
+// ── Responsive scale cards ─────────────────────────────
+.scaleGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.scaleCard {
+  background-color: $ultra-light-grey;
+  border-radius: $border-radius;
+  padding: 0.875rem 1rem;
+}
+
+.scaleCardLabel {
+  font-family: var(--font-open-sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $darker-grey;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.scaleCardValues {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    font-family: var(--font-open-sans);
+    font-size: 0.65rem;
+    color: $dark-grey;
+    line-height: 1.9;
+  }
+}
