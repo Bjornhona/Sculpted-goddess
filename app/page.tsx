@@ -43,7 +43,7 @@ const Home = () => {
             <div className={styles.textBox}>
               <h3>Sculpted Goddess — We are your Partner in Fitness, Nutrition & Confidence</h3>
             </div>
-            <Link href="/about_us"><button>read more</button></Link>
+            <Link href="/about_us"><button>read about us</button></Link>
         </div>
         <div className={[styles.cropped, styles.imagePositionRight].join(" ")}>
           <Image src={trainingPlanImage} alt="dumbells" />
