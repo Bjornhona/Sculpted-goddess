@@ -136,7 +136,7 @@ const ContactUs = () => {
                 <div className={styles.ourContactIcon}><FaAt /></div>
                 <div>
                   <h3><span>E-mail</span></h3>
-                  <h4>info@sculptedgoddess.com</h4>
+                  <h4>info@asaeriksson.com</h4>
                 </div>
               </div>
               <div className={styles.ourContactAddressLine}>

@@ -26,24 +26,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env
-.env*.local
-.env.development
-.env.production
-*.env
-backend/.env
-backend/.env*.local
-backend/node_modules
-backend/package-lock.json
-backend/dist
-backend/build
-backend/coverage
-backend/logs
-backend/logs/*.log
-backend/logs/*.log.*
-backend/logs/*.log.*.*
-backend/logs/*.log.*.*.*
-backend/logs/*.log.*.*.*.*
+.env*
+.env.local
+!.env.example
 
 # vercel
 .vercel

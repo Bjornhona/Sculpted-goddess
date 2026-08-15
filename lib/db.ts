@@ -41,17 +41,6 @@ async function initDB() {
     )
   `);
 
-  // Contact messages table
-  await db.execute(`
-    CREATE TABLE IF NOT EXISTS contact_messages (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL,
-      email TEXT NOT NULL,
-      message TEXT NOT NULL,
-      createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
-    )
-  `);
-
   await db.execute(`
     CREATE TABLE IF NOT EXISTS dietary_profiles (
       id INTEGER PRIMARY KEY AUTOINCREMENT,

@@ -15,7 +15,6 @@ const AuthNavbar = ({isLoggedIn}: {isLoggedIn: boolean}) => {
         </ul>
         :
         <ul id={'login'}>
-          {/* <li><Link href="/register" className={path.startsWith('/register') ? styles.active : undefined}>Signup</Link></li> */}
           <li><Link href="/login" className={path.startsWith('/login') ? styles.active : undefined}>Login</Link></li>
         </ul>
         }
