@@ -116,16 +116,25 @@ export function WeightProvider({ children, initialValues }: WeightProviderProps)
     ? Math.round((recommendedCalIntake * 0.3) / 9)
     : null;
 
-  // 30-day milestone weight loss (0.5–1 kg/week)
-  const milestoneWeight =
-    desiredWeight !== null && weight !== null
-      ? Number((weight - (weight - desiredWeight) * 0.25))
-      : null;
+  // 30-day milestone. A sustainable rate is 0.5–1 kg/week, so over ~4.3 weeks
+  // the projected change is capped at 4 kg. Goals closer than that are reached
+  // inside the 30 days, in which case the milestone is simply the goal.
+  const MAX_30_DAY_CHANGE_KG = 4;
+
+  const milestoneWeight = (() => {
+    if (weight === null || desiredWeight === null) return null;
+
+    const remaining = desiredWeight - weight;
+    const step =
+      Math.sign(remaining) * Math.min(Math.abs(remaining), MAX_30_DAY_CHANGE_KG);
+
+    return Number((weight + step).toFixed(1));
+  })();
 
   const milestonePercent =
-    weight !== null && desiredWeight !== null
+    weight !== null && desiredWeight !== null && milestoneWeight !== null && weight !== desiredWeight
       ? Math.min(
-          Math.abs((weight - Number(milestoneWeight)) / (weight - desiredWeight)) * 100,
+          (Math.abs(milestoneWeight - weight) / Math.abs(desiredWeight - weight)) * 100,
           100
         )
       : 0;

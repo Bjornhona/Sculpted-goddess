@@ -1,7 +1,13 @@
 "use client";
+import { useState } from "react";
 import styles from "./desiredWeight.module.scss";
 import { useWeight } from "@/components/macro-calculator/WeightContext";
 import { saveDietProfile } from "@/actions/macro-actions";
+import {
+  BOUNDS,
+  minHealthyWeight,
+  type DietProfileFieldErrors,
+} from "@/lib/dietaryProfile";
 import { FaDumbbell, FaWeight } from "react-icons/fa";
 
 interface DesiredWeightProps {
@@ -10,10 +16,30 @@ interface DesiredWeightProps {
 
 const DesiredWeight = ({ onSave }: DesiredWeightProps) => {
   const { gender, weight, height, age, activity, tdee, desiredWeight, setDesiredWeight, action, setAction } = useWeight();
+  const [errors, setErrors] = useState<DietProfileFieldErrors>({});
+
+  // Floor the target at a BMI of 18.5 for the entered height rather than 0.
+  const healthyFloor =
+    height !== null ? minHealthyWeight(height) : BOUNDS.desiredWeight.min;
+
+  const targetMin =
+    action === "gain" ? Math.max(weight ?? healthyFloor, healthyFloor) : healthyFloor;
+  const targetMax =
+    action === "gain" ? BOUNDS.desiredWeight.max : weight ?? BOUNDS.desiredWeight.max;
+
+  const errorMessages = Object.values(errors).filter(Boolean);
 
   const saveUserData = async (formData: FormData) => {
-    await saveDietProfile(formData);
-    onSave();
+    const result = await saveDietProfile(formData);
+
+    if (result.success) {
+      setErrors({});
+      onSave();
+      return;
+    }
+
+    // Stay on this step so the user can correct the values.
+    setErrors(result.errors);
   };
 
   return (
@@ -102,14 +128,23 @@ const DesiredWeight = ({ onSave }: DesiredWeightProps) => {
                   value={desiredWeight ?? ""}
                   onChange={(e) => setDesiredWeight(Number(e.target.value))}
                   placeholder="0"
-                  min={action === "gain" ? weight ?? 0 : 0}
-                  max={action === "gain" ? 300 : weight ?? 300}
+                  min={targetMin}
+                  max={targetMax}
+                  aria-invalid={errors.desiredWeight ? true : undefined}
                   required
                 />
                 <h3 className={styles.unit}>kg</h3>
               </div>
             </div>
           </div>
+
+          {errorMessages.length > 0 && (
+            <ul className={styles.formErrors} role="alert">
+              {errorMessages.map((message) => (
+                <li key={message}>{message}</li>
+              ))}
+            </ul>
+          )}
 
           <div className={styles.calculateMakro}>
             <button disabled={!action || !desiredWeight} type="submit" id="macro-button">

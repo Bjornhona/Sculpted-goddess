@@ -116,6 +116,19 @@
         background-color: $light-orange;
         border-color: $light-orange;
       }
+      .formErrors {
+        list-style: none;
+        margin: 0 auto 1.5rem;
+        padding: 0;
+        max-width: 30rem;
+        text-align: center;
+        li {
+          font-size: var(--font-p-size);
+          line-height: 1.4;
+          color: $fuccia;
+          padding: 0.25rem 0;
+        }
+      }
       .calculateMakro {
         text-align: center;
         button:enabled {

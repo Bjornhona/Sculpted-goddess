@@ -1,4 +1,5 @@
 import db from "./db";
+import type { DietProfileInput } from "./dietaryProfileSchema";
 
 export const getMacros = async (userId: string) => {
   const result = await db.execute({
@@ -8,7 +9,7 @@ export const getMacros = async (userId: string) => {
   return result.rows?.[0] || null;
 };
 
-export async function saveMacros(userId: string, data: any) {
+export async function saveMacros(userId: string, data: DietProfileInput) {
   // Remove previous entry so each user only has one profile
   await db.execute({
     sql: `DELETE FROM dietary_profiles WHERE user_id = ?`,
@@ -28,7 +29,7 @@ export async function saveMacros(userId: string, data: any) {
       data.height,
       data.age,
       data.activity,
-      data.desired_weight,
+      data.desiredWeight,
       data.action
     ]
   });

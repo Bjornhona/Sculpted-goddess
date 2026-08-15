@@ -1,6 +1,7 @@
 "use client";
 import styles from "./dietaryNeeds.module.scss";
 import { useWeight } from "@/components/macro-calculator/WeightContext";
+import { BOUNDS } from "@/lib/dietaryProfile";
 import { FaMale, FaFemale } from "react-icons/fa";
 interface Props {
   onSave: () => void;
@@ -100,8 +101,8 @@ const DietaryNeeds = ({ onSave }: Props) => {
                   type="number"
                   name="weight"
                   placeholder="0"
-                  min="0"
-                  max="300"
+                  min={BOUNDS.weight.min}
+                  max={BOUNDS.weight.max}
                   value={weight ?? ""}
                   onChange={(e) => setWeight(parseFloat(e.target.value))}
                   required
@@ -119,8 +120,8 @@ const DietaryNeeds = ({ onSave }: Props) => {
                   type="number"
                   name="height"
                   placeholder="0"
-                  min="0"
-                  max="300"
+                  min={BOUNDS.height.min}
+                  max={BOUNDS.height.max}
                   value={height ?? ""}
                   onChange={(e) => setHeight(parseFloat(e.target.value))}
                   required
@@ -138,8 +139,9 @@ const DietaryNeeds = ({ onSave }: Props) => {
                   type="number"
                   name="age"
                   placeholder="0"
-                  min="0"
-                  max="130"
+                  min={BOUNDS.age.min}
+                  max={BOUNDS.age.max}
+                  step="1"
                   value={age ?? ""}
                   onChange={(e) => setAge(Number(e.target.value))}
                   required
